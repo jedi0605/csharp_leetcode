@@ -11,5 +11,16 @@ namespace LeetCodeLib
         {
             return a + b;
         }
+
+        public int AddThree(int a, int b, int c)
+        {
+            return a + b + c;    
+        }
+
+        public string WeekenDay(int day)
+        {
+            string[] week = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
+            return week[day];        
+        }        
     }
 }
