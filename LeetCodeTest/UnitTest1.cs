@@ -66,7 +66,7 @@ public class UnitTest1
         Assert.IsTrue(head.Equals(head2) == false);
     }
 
-        [TestMethod]
+    [TestMethod]
     public void MergeTwoSortedListsTest2()
     {
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(4)));
@@ -74,5 +74,18 @@ public class UnitTest1
 
         // ListNode reuslt = MergeTwoSortedLists.MergeTwoLists(head, head2);
         Assert.IsTrue(head.Equals(head2) == true);
+    }
+
+    [TestMethod]
+    public void MergeTwoSortedListsTest3()
+    {
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(4)));
+        ListNode head2 = new ListNode(1, new ListNode(3, new ListNode(4)));
+
+        ListNode reuslt = MergeTwoSortedLists.MergeTwoLists(head, head2);
+
+        ListNode answer = new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4))))));
+
+        Assert.IsTrue(reuslt.Equals(answer) == true);
     }
 }
