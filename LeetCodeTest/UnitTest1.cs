@@ -88,4 +88,45 @@ public class UnitTest1
 
         Assert.IsTrue(reuslt.Equals(answer) == true);
     }
+
+    [TestMethod]
+    public void BestTime2BuyAndSellStockTest()
+    {
+        int[] array = new int[] { 7, 1, 5, 3, 6, 4 };
+        int result = 5;
+        int profit = BestTime2BuyAndSellStock.MaxProfit(array);
+        Assert.IsTrue(result == profit);
+    }
+
+    [TestMethod]
+    public void BestTime2BuyAndSellStockTest2()
+    {
+        int[] array = new int[] { 7, 6, 4, 3, 1 };
+        int result = 0;
+        int profit = BestTime2BuyAndSellStock.MaxProfit(array);
+        Assert.IsTrue(result == profit);
+    }
+
+    [TestMethod]
+    public void ValidPalindromeTest()
+    {
+        string input = "A man, a plan, a canal: Panama";
+
+        bool IsPalindrome = ValidPalindrome.IsPalindrome(input);
+        bool answer = true;
+        Assert.IsTrue(IsPalindrome == answer);
+
+        string input2 = "race a car";
+        bool IsPalindrome2 = ValidPalindrome.IsPalindrome(input2);
+        bool answer2 = false;
+        Assert.IsTrue(IsPalindrome2 == answer2);
+
+         string input3 = "A man, a plan, a canal -- Panama";
+        bool IsPalindrome3 = ValidPalindrome.IsPalindrome(input3);
+        bool answer3 = true;
+        Assert.IsTrue(IsPalindrome3 == answer3);
+
+
+
+    }
 }
