@@ -121,12 +121,44 @@ public class UnitTest1
         bool answer2 = false;
         Assert.IsTrue(IsPalindrome2 == answer2);
 
-         string input3 = "A man, a plan, a canal -- Panama";
+        string input3 = "A man, a plan, a canal -- Panama";
         bool IsPalindrome3 = ValidPalindrome.IsPalindrome(input3);
         bool answer3 = true;
         Assert.IsTrue(IsPalindrome3 == answer3);
+    }
 
+    [TestMethod]
+    public void InvertBinaryTreeTest()
+    {
+        TreeNode root = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        TreeNode root2 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        Assert.IsTrue(InvertBinaryTree.CompareTrees(root, root2));
+        TreeNode root3 = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        TreeNode root4 = new TreeNode(9, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        Assert.IsTrue(InvertBinaryTree.CompareTrees(root3, root4) == false);
+    }
 
+    [TestMethod]
+    public void InvertBinaryTreeTest2()
+    {
+        TreeNode root = new TreeNode(2, new TreeNode(1), new TreeNode(3));
 
+        TreeNode invert = InvertBinaryTree.InvertTree(root);
+        TreeNode target = new TreeNode(2, new TreeNode(3), new TreeNode(1));
+
+        Assert.IsTrue(InvertBinaryTree.Equals(invert, target));
+    }
+
+    [TestMethod]
+    public void InvertBinaryTreeTest3()
+    {
+        TreeNode root = new TreeNode(4, new TreeNode(2, new TreeNode(1), new TreeNode(3)), new TreeNode(7, new TreeNode(6), new TreeNode(9)));
+        InvertBinaryTree.PrintAll(root);
+        TreeNode invert = InvertBinaryTree.InvertTree(root);
+        System.Diagnostics.Debug.WriteLine("******");
+        InvertBinaryTree.PrintAll(invert);
+        TreeNode target = new TreeNode(4, new TreeNode(7, new TreeNode(9), new TreeNode(6)), new TreeNode(2, new TreeNode(3), new TreeNode(1)));
+
+        Assert.IsTrue(InvertBinaryTree.CompareTrees(invert, target));
     }
 }
