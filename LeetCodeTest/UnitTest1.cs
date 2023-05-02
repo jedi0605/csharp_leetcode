@@ -161,4 +161,24 @@ public class UnitTest1
 
         Assert.IsTrue(InvertBinaryTree.CompareTrees(invert, target));
     }
+
+    [TestMethod]
+    public void ValidAnagramTest()
+    {
+        string s = "";
+        string t = "";
+        Assert.IsTrue(ValidAnagram.IsAnagram(s, t) == true);
+
+        string s1 = "anagram";
+        string t1 = "nagaram";
+        Assert.IsTrue(ValidAnagram.IsAnagram(s1, t1) == true);
+
+        string s2 = "rat";
+        string t2 = "car";
+        Assert.IsTrue(ValidAnagram.IsAnagram(s2, t2) == false);
+
+        string s3 = "aacc";
+        string t3 = "ccac";
+        Assert.IsTrue(ValidAnagram.IsAnagram(s3, t3) == true);
+    }
 }
