@@ -181,4 +181,31 @@ public class UnitTest1
         string t3 = "ccac";
         Assert.IsTrue(ValidAnagram.IsAnagram(s3, t3) == true);
     }
+
+    [TestMethod]
+    public void BinarySearchTest()
+    {
+        int[] nums = { -1, 0, 3, 5, 9, 12 };
+        int target = 9;
+        int result = 4;
+        // int targetIndex = BinarySearch.Search(nums, target);
+        int targetIndex = BinarySearch.BinarySearchRecursive(nums, target, nums.Length - 1, 0);
+        Assert.IsTrue(targetIndex == result);
+
+        int[] nums2 = { -1, 0, 3, 5, 9, 12 };
+        int target2 = 2;
+        int result2 = -1;
+        //        int targetIndex2 = BinarySearch.Search(nums2, target2);
+        int targetIndex2 = BinarySearch.BinarySearchRecursive(nums2, target2, nums2.Length - 1, 0);
+        Assert.IsTrue(targetIndex2 == result2);
+    }
+
+
+    [TestMethod]
+    public void FloodFillTest()
+    {
+        int[][] image = new int[][] { new int[] { 1, 1, 1 }, new int[] { 1, 1, 0 }, new int[] { 1, 0, 1 } };
+        FloodFill.Fill(image, 1, 1, 2);
+        // FloodFill.Print(image);
+    }
 }
