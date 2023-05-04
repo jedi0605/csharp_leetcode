@@ -27,29 +27,29 @@ namespace LeetCodeLib
     {
         public static TreeNode InvertTree(TreeNode root)
         {
-            if (root.left != null && root.right != null)
-            {
-                TreeNode tmp = root.left;
-                root.left = root.right;
-                root.right = tmp;
-
-                InvertTree(root.left);
-                InvertTree(root.right);
-            }
-            return root;
-
-
-            // if (root == null)
+            // if (root.left != null && root.right != null)
             // {
-            //     return null;
+            //     TreeNode tmp = root.left;
+            //     root.left = root.right;
+            //     root.right = tmp;
+
+            //     InvertTree(root.left);
+            //     InvertTree(root.right);
             // }
-
-            // var left = root.left;
-            // var right = root.right;
-            // root.left = InvertTree(right);
-            // root.right = InvertTree(left);
-
             // return root;
+
+
+            if (root == null)
+            {
+                return null;
+            }
+
+            var left = root.left;
+            var right = root.right;
+            root.left = InvertTree(right);
+            root.right = InvertTree(left);
+
+            return root;
         }
 
         public static void PrintAll(TreeNode root)
