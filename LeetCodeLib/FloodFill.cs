@@ -31,14 +31,13 @@ namespace LeetCodeLib
                 return image;
             else
                 _fill(image, sr, sc, image[sr][sc], color);
-
             return image;
         }
 
         private static void _fill(int[][] image, int sr, int sc, int orgColor, int newColor)
         {
             // Check out-bound
-            if (sr < 0 || sc < 0 || sr > image.Length || sc > image[0].Length)
+            if (sr < 0 || sc < 0 || sr > image.Length - 1 || sc > image[0].Length - 1)
                 return;
 
             if (image[sr][sc] != orgColor)
@@ -61,8 +60,30 @@ namespace LeetCodeLib
                     System.Diagnostics.Debug.Write(myArray[i][j] + " ");
                 }
                 System.Diagnostics.Debug.Write("\n");
-
             }
+            System.Diagnostics.Debug.Write("\n");
+        }
+
+        public static bool FloodEquals(int[][] myArray, int[][] array2)
+        {
+
+            try
+            {
+                for (int i = 0; i < myArray.Length; i++)
+                {
+                    for (int j = 0; j < myArray[i].Length; j++)
+                    {
+                        if (myArray[i][j] != array2[i][j])
+                            return false;
+                    }
+                }
+                return true;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+
         }
 
     }

@@ -206,6 +206,20 @@ public class UnitTest1
     {
         int[][] image = new int[][] { new int[] { 1, 1, 1 }, new int[] { 1, 1, 0 }, new int[] { 1, 0, 1 } };
         FloodFill.Fill(image, 1, 1, 2);
-        // FloodFill.Print(image);
+        int[][] imageExpect = new int[][] { new int[] { 2, 2, 2 }, new int[] { 2, 2, 0 }, new int[] { 2, 0, 1 } };
+
+        bool result = FloodFill.FloodEquals(image, imageExpect);
+        Assert.IsTrue(result);
+    }
+
+    [TestMethod]
+    public void FloodFillTest2()
+    {
+        int[][] image = new int[][] { new int[] { 0, 0, 0 }, new int[] { 0, 0, 0 } };
+        FloodFill.Fill(image, 0, 0, 0);
+        int[][] imageExpect = new int[][] { new int[] { 0, 0, 0 }, new int[] { 0, 0, 0 } };
+
+        bool result = FloodFill.FloodEquals(image, imageExpect);
+        Assert.IsTrue(result);
     }
 }
