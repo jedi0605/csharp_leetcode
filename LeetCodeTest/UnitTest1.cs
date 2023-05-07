@@ -280,4 +280,31 @@ public class UnitTest1
         bool result2 = BalancedBinaryTree.IsBalance(root);
         Assert.IsTrue(result2 == false);
     }
+
+    [TestMethod]
+    public void LinkedListCycleTest()
+    {
+        ListNode head = new ListNode(3);
+        ListNode two = new ListNode(2);
+        head.next = two;
+        ListNode  three = new ListNode(0);
+        two.next = three;
+        ListNode four = new ListNode(-4);
+        three.next = four;
+
+        four.next = two;
+        bool hasCycle =  LinkedListCycle.HasCycle(head);        
+        Assert.IsTrue(hasCycle);
+    }
+
+    [TestMethod]
+    public void LinkedListCycleTest2()
+    {
+        ListNode head = new ListNode(1);
+        ListNode two = new ListNode(2);
+        head.next = two;
+        
+        bool hasCycle =  LinkedListCycle.HasCycle(head);        
+        Assert.IsTrue(hasCycle);
+    }
 }
