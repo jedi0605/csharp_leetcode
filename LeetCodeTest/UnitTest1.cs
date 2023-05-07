@@ -222,4 +222,62 @@ public class UnitTest1
         bool result = FloodFill.FloodEquals(image, imageExpect);
         Assert.IsTrue(result);
     }
+
+    [TestMethod]
+    public void BinaryTreeInsertTest()
+    {
+        int?[] array = { 6, 2, 8, 0, 4, 7, 9, null, null, 3, 5 };
+        BinaryTree binaryTree = new BinaryTree(array);
+        System.Diagnostics.Debug.WriteLine("In-Order Traversal:");
+        binaryTree.InOrderTraversal(binaryTree.root);
+    }
+
+    [TestMethod]
+    public void LowestCommonAncestorTest()
+    {
+        int?[] array = { 6, 2, 8, 0, 4, 7, 9, null, null, 3, 5 };
+        BinaryTree binaryTree = new BinaryTree(array);
+
+        TreeNode ancestor = LowestCommonAncestor.Solution(binaryTree.root, new TreeNode(2), new TreeNode(8));
+        Assert.IsTrue(ancestor.val == 6);
+
+        TreeNode ancestor2 = LowestCommonAncestor.Solution(binaryTree.root, new TreeNode(2), new TreeNode(4));
+        Assert.IsTrue(ancestor2.val == 2);
+
+    }
+
+
+    [TestMethod]
+    public void BalancedBinaryTreeTest()
+    {
+        int?[] array = { 6, 2, 8, 0, 4, 7, 9, null, null, 3, 5 };
+        BinaryTree binaryTree = new BinaryTree(array);
+
+        int GetTreeHight = BalancedBinaryTree.GetTreeHight(binaryTree.root);
+        Assert.IsTrue(GetTreeHight == 4);
+    }
+
+
+    [TestMethod]
+    public void BalancedBinaryTreeTest2()
+    {
+        int?[] array2 = { 1, 2, 2, 3, 3, null, null, 4, 4 };
+        BinaryTree binaryTree2 = new BinaryTree(array2);
+        int height = BalancedBinaryTree.GetTreeHight(binaryTree2.root);
+        bool result3 = BalancedBinaryTree.IsBalance(binaryTree2.root);
+        Assert.IsTrue(result3 == false);
+
+        int?[] array = { 3, 9, 20, null, null, 15, 7 };
+        BinaryTree binaryTree = new BinaryTree(array);
+        int GetTreeHight = BalancedBinaryTree.GetTreeHight(binaryTree.root);
+        bool result = BalancedBinaryTree.IsBalance(binaryTree.root);
+        Assert.IsTrue(GetTreeHight == 3);
+        Assert.IsTrue(result);
+
+
+        // int GetTreeHight2 = BalancedBinaryTree.GetTreeHight(binaryTree2.root);
+        TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(3, new TreeNode(4), new TreeNode(4)), new TreeNode(3)), new TreeNode(2));
+        bool result2 = BalancedBinaryTree.IsBalance(root);
+        Assert.IsTrue(result2 == false);
+    }
 }
