@@ -307,4 +307,15 @@ public class UnitTest1
         bool hasCycle =  LinkedListCycle.HasCycle(head);        
         Assert.IsTrue(hasCycle);
     }
+
+      [TestMethod]
+    public void RansomNoteTest()
+    {
+        ListNode head = new ListNode(1);
+        ListNode two = new ListNode(2);
+        head.next = two;
+        
+        bool hasCycle =  LinkedListCycle.HasCycle(head);        
+        Assert.IsTrue(hasCycle);
+    }
 }
