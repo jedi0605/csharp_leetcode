@@ -287,13 +287,13 @@ public class UnitTest1
         ListNode head = new ListNode(3);
         ListNode two = new ListNode(2);
         head.next = two;
-        ListNode  three = new ListNode(0);
+        ListNode three = new ListNode(0);
         two.next = three;
         ListNode four = new ListNode(-4);
         three.next = four;
 
         four.next = two;
-        bool hasCycle =  LinkedListCycle.HasCycle(head);        
+        bool hasCycle = LinkedListCycle.HasCycle(head);
         Assert.IsTrue(hasCycle);
     }
 
@@ -303,19 +303,50 @@ public class UnitTest1
         ListNode head = new ListNode(1);
         ListNode two = new ListNode(2);
         head.next = two;
-        
-        bool hasCycle =  LinkedListCycle.HasCycle(head);        
+
+        bool hasCycle = LinkedListCycle.HasCycle(head);
         Assert.IsTrue(hasCycle);
     }
 
-      [TestMethod]
+    [TestMethod]
     public void RansomNoteTest()
     {
-        ListNode head = new ListNode(1);
-        ListNode two = new ListNode(2);
-        head.next = two;
-        
-        bool hasCycle =  LinkedListCycle.HasCycle(head);        
-        Assert.IsTrue(hasCycle);
+        // Not yet
+        Assert.IsTrue(true);
+    }
+
+    [TestMethod]
+    public void SpiralMatrixTest()
+    {
+        int[][] matrix = new int[3][];
+        matrix[0] = new int[] { 1, 2, 3 };
+        matrix[1] = new int[] { 4, 5, 6 };
+        matrix[2] = new int[] { 7, 8, 9 };
+
+        List<int> answer = new List<int> { 1, 2, 3, 6, 9, 8, 7, 4, 5 };
+
+        IList<int> order = SpiralMatrix.SpiralOrder(matrix);
+        for (int i = 0; i < order.Count; i++)
+        {
+            if (order[i] != answer[i])
+                Assert.Fail();
+        }
+    }
+    [TestMethod]
+    public void SpiralMatrixTest2()
+    {
+        int[][] matrix = new int[3][];
+        matrix[0] = new int[] { 1, 2, 3, 4 };
+        matrix[1] = new int[] { 5, 6, 7, 8 };
+        matrix[2] = new int[] { 9, 10, 11, 12 };
+
+        List<int> answer = new List<int> { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 };
+
+        IList<int> order = SpiralMatrix.SpiralOrder(matrix);
+        for (int i = 0; i < order.Count; i++)
+        {
+            if (order[i] != answer[i])
+                Assert.Fail();
+        }
     }
 }
