@@ -9,7 +9,29 @@ namespace LeetCodeLib
     {
         public static bool CanConstruct(string ransomNote, string magazine)
         {
-            return false;
+            Dictionary<char, int> maps = new Dictionary<char, int>();
+            foreach (var item in magazine)
+            {
+                if (maps.ContainsKey(item))
+                    maps[item]++;
+                else
+                    maps.Add(item, 1);
+            }
+
+            foreach (var item in ransomNote)
+            {
+                if (maps.ContainsKey(item) == false)
+                    return false;
+                else
+                {
+                    int count = maps[item] - 1;
+                    if (count < 0)
+                        return false;
+                    maps[item]--;
+                }
+            }
+
+            return true;
         }
     }
 }

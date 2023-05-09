@@ -312,7 +312,10 @@ public class UnitTest1
     public void RansomNoteTest()
     {
         // Not yet
-        Assert.IsTrue(true);
+        Assert.IsTrue(RansomNote.CanConstruct("a", "b") == false);
+        Assert.IsTrue(RansomNote.CanConstruct("aa", "ab") == false);
+        Assert.IsTrue(RansomNote.CanConstruct("aa", "aab") == true);
+
     }
 
     [TestMethod]

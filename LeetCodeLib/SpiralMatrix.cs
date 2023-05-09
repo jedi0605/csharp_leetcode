@@ -10,15 +10,11 @@ namespace LeetCodeLib
         public static IList<int> SpiralOrder(int[][] matrix)
         {
             List<int> result = new List<int>();
-            int totalMatrix = GetTotalCount(matrix);
 
             int rowBegin = 0;
             int rowEnd = matrix.Length - 1;
             int colBegin = 0;
             int colEnd = matrix[0].Length - 1;
-
-
-
             while (rowBegin <= rowEnd && colBegin <= colEnd)
             {
                 // --->
@@ -58,16 +54,6 @@ namespace LeetCodeLib
                 colBegin++;
             }
             return result;
-        }
-
-        private static int GetTotalCount(int[][] matrix)
-        {
-            int totalCount = 0;
-            for (int i = 0; i < matrix.Length; i++)
-            {
-                totalCount += matrix[i].Length;
-            }
-            return totalCount;
         }
     }
 }
