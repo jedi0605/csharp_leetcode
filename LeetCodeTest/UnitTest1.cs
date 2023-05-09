@@ -352,4 +352,33 @@ public class UnitTest1
                 Assert.Fail();
         }
     }
+
+    [TestMethod]
+    public void SpiralMatrixTest3()
+    {
+        int[][] matrix = new int[1][];
+        matrix[0] = new int[] { 1, 2 };
+
+        List<int> answer = new List<int> { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 };
+
+        IList<int> order = SpiralMatrix.SpiralOrder(matrix);
+        for (int i = 0; i < order.Count; i++)
+        {
+            if (order[i] != answer[i])
+                Assert.Fail();
+        }
+    }
+
+    [TestMethod]
+    public void SearchInRotatedSortedArrayTest()
+    {
+        int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
+        int index = SearchInRotatedSortedArray.Search(nums, 0);
+        Assert.IsTrue(index == 4);
+
+        int[] nums2 = { 3, 1 };
+        int index2 = SearchInRotatedSortedArray.Search(nums2,3);
+        Assert.IsTrue(index2 == 0);
+
+    }
 }
