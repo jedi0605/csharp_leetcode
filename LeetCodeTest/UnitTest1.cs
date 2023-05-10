@@ -386,6 +386,12 @@ public class UnitTest1
     {
         Assert.IsTrue(ClimbStairs.Climb(2) == 2);
         Assert.IsTrue(ClimbStairs.Climb(3) == 3);
+    }
 
+    [TestMethod]
+    public void LongestPalindromeTest()
+    {
+        string a = "abccccdd";
+        Assert.IsTrue(LongestPalindrome.Longest(a) == 7);        
     }
 }
