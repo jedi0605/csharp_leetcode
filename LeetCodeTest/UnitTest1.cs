@@ -377,8 +377,15 @@ public class UnitTest1
         Assert.IsTrue(index == 4);
 
         int[] nums2 = { 3, 1 };
-        int index2 = SearchInRotatedSortedArray.Search(nums2,3);
+        int index2 = SearchInRotatedSortedArray.Search(nums2, 3);
         Assert.IsTrue(index2 == 0);
+    }
+
+    [TestMethod]
+    public void ClimbStairsTest()
+    {
+        Assert.IsTrue(ClimbStairs.Climb(2) == 2);
+        Assert.IsTrue(ClimbStairs.Climb(3) == 3);
 
     }
 }
