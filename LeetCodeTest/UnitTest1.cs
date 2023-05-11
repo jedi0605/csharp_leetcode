@@ -413,7 +413,17 @@ public class UnitTest1
     {
         int[] nums = { 2, 2, 2, 1, 1, 1, 2, 2 };
         int majority = MajorityElement.GetMajorityElementVote(nums);
-        Assert.IsTrue(majority ==2);
+        Assert.IsTrue(majority == 2);
+    }
 
+
+    [TestMethod]
+    public void AddBinaryTest()
+    {
+        string a = "11";
+        string b = "1";
+        Assert.IsTrue(AddBinary.Run(a, b) == "100");
+        string test = AddBinary.Run("1010", "1011");
+        Assert.IsTrue(AddBinary.Run("1010", "1011") == "10101");
     }
 }
