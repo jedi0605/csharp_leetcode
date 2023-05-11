@@ -407,4 +407,13 @@ public class UnitTest1
         Assert.IsTrue(reverse.Equals(head));
 
     }
+
+    [TestMethod]
+    public void MajorityElementTest()
+    {
+        int[] nums = { 2, 2, 2, 1, 1, 1, 2, 2 };
+        int majority = MajorityElement.GetMajorityElementVote(nums);
+        Assert.IsTrue(majority ==2);
+
+    }
 }
