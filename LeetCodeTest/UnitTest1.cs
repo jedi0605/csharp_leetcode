@@ -392,6 +392,19 @@ public class UnitTest1
     public void LongestPalindromeTest()
     {
         string a = "abccccdd";
-        Assert.IsTrue(LongestPalindrome.Longest(a) == 7);        
+        Assert.IsTrue(LongestPalindrome.Longest(a) == 7);
+    }
+
+    [TestMethod]
+    public void ReverseLinkedListTest()
+    {
+        ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+
+        head.PrintLinkedList();
+        head = ReverseLinkedList.ReverseList(head);
+        head.PrintLinkedList();
+        ListNode reverse = new ListNode(5, new ListNode(4, new ListNode(3, new ListNode(2, new ListNode(1)))));
+        Assert.IsTrue(reverse.Equals(head));
+
     }
 }
