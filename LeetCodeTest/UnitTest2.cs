@@ -20,9 +20,16 @@ public class UnitTest2
         ListNode middle = MiddleOfLinkedList.MiddleNode(root);
 
 
-        ListNode answerNode = new ListNode(3,new ListNode(4,new ListNode(5)));
+        ListNode answerNode = new ListNode(3, new ListNode(4, new ListNode(5)));
         Assert.IsTrue(middle.Equals(answerNode));
 
     }
 
+    [TestMethod]
+    public void MaximumDepthOfBinaryTreeTest()
+    {
+        int?[] array = { 3, 9, 20, null, null, 15, 7 };
+        BinaryTree tree = new BinaryTree(array);
+        Assert.IsTrue(MaximumDepthOfBinaryTree.MaxDepth(tree.root) == 3);
+    }
 }
