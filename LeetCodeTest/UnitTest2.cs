@@ -32,4 +32,72 @@ public class UnitTest2
         BinaryTree tree = new BinaryTree(array);
         Assert.IsTrue(MaximumDepthOfBinaryTree.MaxDepth(tree.root) == 3);
     }
+
+    [TestMethod]
+    public void ContainsDuplicateTest()
+    {
+        int[] array = { 1, 2, 3, 1 };
+        Assert.IsTrue(ContainsDuplicate.CheckDuplicate(array) == true);
+
+        int[] array2 = { 1, 2, 3, 4 };
+        Assert.IsTrue(ContainsDuplicate.CheckDuplicate(array2) == false);
+    }
+
+    [TestMethod]
+    public void RomanToIntegerTest()
+    {
+        Assert.IsTrue(RomanToInt.ConvertToInt("III") == 3);
+        Assert.IsTrue(RomanToInt.ConvertToInt("LVIII") == 58);
+        Assert.IsTrue(RomanToInt.ConvertToInt("MCMXCIV") == 1994);
+
+    }
+
+    [TestMethod]
+    public void RomanToInteger2Test()
+    {
+        Assert.IsTrue(RomanToInt.ConvertToInt2("III") == 3);
+        Assert.IsTrue(RomanToInt.ConvertToInt2("LVIII") == 58);
+        Assert.IsTrue(RomanToInt.ConvertToInt2("MCMXCIV") == 1994);
+    }
+
+
+    [TestMethod]
+    public void BackspaceStringCompareTest()
+    {
+        string s = "ab#c";
+        string t = "ad#c";
+        Assert.IsTrue(BackspaceCompare.Compare(s, t) == true);
+    }
+
+    [TestMethod]
+    public void BackspaceStringCompareTest2()
+    {
+        string s = "a#c";
+        string t = "b";
+        Assert.IsTrue(BackspaceCompare.Compare(s, t) == false);
+    }
+
+    [TestMethod]
+    public void BackspaceStringCompareTest3()
+    {
+        string s = "ab##";
+        string t = "c#d#";
+        Assert.IsTrue(BackspaceCompare.Compare(s, t) == true);
+    }
+
+    [TestMethod]
+    public void BackspaceStringCompareTest4()
+    {
+        string s = "a##c";
+        string t = "#a#c";
+        Assert.IsTrue(BackspaceCompare.Compare(s, t) == true);
+    }
+        
+    [TestMethod]
+    public void BackspaceStringCompareTest5()
+    {
+        string s = "y#fo##f";
+        string t = "y#f#o##f";
+        Assert.IsTrue(BackspaceCompare.Compare(s, t) == false);
+    }
 }
