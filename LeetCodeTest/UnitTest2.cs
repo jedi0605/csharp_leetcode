@@ -100,12 +100,35 @@ public class UnitTest2
         string t = "#a#c";
         Assert.IsTrue(BackspaceCompare.Compare(s, t) == true);
     }
-        
+
     [TestMethod]
     public void BackspaceStringCompareTest5()
     {
         string s = "y#fo##f";
         string t = "y#f#o##f";
         Assert.IsTrue(BackspaceCompare.Compare(s, t) == false);
+    }
+
+    [TestMethod]
+    public void CounteBitsTest()
+    {
+        int n = 5;
+        int[] result = { 0, 1, 1, 2, 1, 2 };
+        Assert.IsTrue(CountBits.CountBit(n).SequenceEqual(result));
+    }
+
+    [TestMethod]
+    public void CounteBitsTest2()
+    {
+        int n = 2;
+        int[] result = { 0, 1, 1 };
+        Assert.IsTrue(CountBits.CountBit(n).SequenceEqual(result));
+    }
+
+    [TestMethod]
+    public void NumberOfOneBitTest()
+    {
+        uint n = 00000000000000000000000000001011;
+        Assert.IsTrue(NumberOfOneBit.HammingWeight2(n) == 3);
     }
 }
