@@ -131,4 +131,37 @@ public class UnitTest2
         uint n = 00000000000000000000000000001011;
         Assert.IsTrue(NumberOfOneBit.HammingWeight2(n) == 3);
     }
+
+    [TestMethod]
+    public void LongestCommonPrefixTest()
+    {
+        string[] input = { "flower", "flow", "flight" };
+        string[] input2 = { "dog", "racecar", "car" };
+        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix(input) == "fl");
+        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix(input2) == "");
+    }
+
+    [TestMethod]
+    public void SingleNumberTest()
+    {
+        int[] nums = { 2, 2, 1 };
+        Assert.IsTrue(SingleNumber.GetSingleNumber(nums) == 1);
+    }
+
+    [TestMethod]
+    public void PalindromeLinkedListTest()
+    {
+        ListNode root = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
+        Assert.IsTrue(PalindromeLinkedList.IsPalindrome(root) == true);
+    }
+    [TestMethod]
+    public void PalindromeLinkedListTest2()
+    {
+        ListNode root = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4))));
+        // ListNode reverse = PalindromeLinkedList._ReverseLinkedList(root);
+
+        Assert.IsTrue(PalindromeLinkedList.IsPalindromeQuickSlow(root) == false);
+        ListNode root2 = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
+        Assert.IsTrue(PalindromeLinkedList.IsPalindromeQuickSlow(root2) == true);
+    }
 }
