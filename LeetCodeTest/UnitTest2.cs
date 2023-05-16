@@ -154,6 +154,7 @@ public class UnitTest2
         ListNode root = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         Assert.IsTrue(PalindromeLinkedList.IsPalindrome(root) == true);
     }
+
     [TestMethod]
     public void PalindromeLinkedListTest2()
     {
@@ -163,5 +164,14 @@ public class UnitTest2
         Assert.IsTrue(PalindromeLinkedList.IsPalindromeQuickSlow(root) == false);
         ListNode root2 = new ListNode(1, new ListNode(2, new ListNode(2, new ListNode(1))));
         Assert.IsTrue(PalindromeLinkedList.IsPalindromeQuickSlow(root2) == true);
+    }
+
+    [TestMethod]
+    public void MoveZerosTest()
+    {
+        int[] nums = { 0, 1, 0, 3, 12 };
+        int[] assert = {1,3,12,0,0};
+        MoveZeroes.Move(nums);
+        Assert.IsTrue(nums.SequenceEqual(assert));       
     }
 }
