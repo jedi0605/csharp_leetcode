@@ -170,8 +170,31 @@ public class UnitTest2
     public void MoveZerosTest()
     {
         int[] nums = { 0, 1, 0, 3, 12 };
-        int[] assert = {1,3,12,0,0};
+        int[] assert = { 1, 3, 12, 0, 0 };
         MoveZeroes.Move(nums);
-        Assert.IsTrue(nums.SequenceEqual(assert));       
+        Assert.IsTrue(nums.SequenceEqual(assert));
+    }
+
+    [TestMethod]
+    public void IsSymmetricTest()
+    {
+        int?[] array = { 1, 2, 2, 3, 4, 4, 3 };
+        BinaryTree t = new BinaryTree(array);
+        Assert.IsTrue(SymmetricTree.IsSymmetric(t.root));
+    }
+
+    [TestMethod]
+    public void IsSymmetricTest2()
+    {
+        int?[] array = { 1, 2, 2, null, 3, null, 3 };
+        BinaryTree t = new BinaryTree(array);
+        Assert.IsTrue(SymmetricTree.IsSymmetric(t.root) == false);
+    }
+    [TestMethod]
+    public void IsSymmetricTest3()
+    {
+        int?[] array = { 1, 2, 2, 2, null, 2 };
+        BinaryTree t = new BinaryTree(array);
+        Assert.IsTrue(SymmetricTree.IsSymmetric(t.root) == false);
     }
 }
