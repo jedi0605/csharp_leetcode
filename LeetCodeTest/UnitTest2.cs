@@ -197,4 +197,22 @@ public class UnitTest2
         BinaryTree t = new BinaryTree(array);
         Assert.IsTrue(SymmetricTree.IsSymmetric(t.root) == false);
     }
+
+    [TestMethod]
+    public void MissingNumberTest()
+    {
+        int[] array = { 3, 0 ,1};
+        
+        Assert.IsTrue(MissingNumber.GetMissingNumber(array) == 2);
+
+        int[] array2 = {9,6,4,2,3,5,7,0,1};
+        Assert.IsTrue(MissingNumber.GetMissingNumber(array2) == 8);
+    }
+
+    [TestMethod]
+    public void PalindromeNumberTest()
+    {
+        int x = 121;
+        Assert.IsTrue(PalindromeNumber.IsPalindrome(x));
+    }
 }
