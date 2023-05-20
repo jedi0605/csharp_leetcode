@@ -201,11 +201,11 @@ public class UnitTest2
     [TestMethod]
     public void MissingNumberTest()
     {
-        int[] array = { 3, 0 ,1};
-        
+        int[] array = { 3, 0, 1 };
+
         Assert.IsTrue(MissingNumber.GetMissingNumber(array) == 2);
 
-        int[] array2 = {9,6,4,2,3,5,7,0,1};
+        int[] array2 = { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
         Assert.IsTrue(MissingNumber.GetMissingNumber(array2) == 8);
     }
 
@@ -214,5 +214,25 @@ public class UnitTest2
     {
         int x = 121;
         Assert.IsTrue(PalindromeNumber.IsPalindrome(x));
+    }
+
+    [TestMethod]
+    public void ConvertSortedArrayToBinarySearchTreeTest()
+    {
+
+        int[] sortArr = { -10, -3, 0, 5, 9 };
+        int?[] assertArr = { 0, -10, 5, null, -3, null, 9 };
+        BinaryTree tree = new BinaryTree(assertArr);
+        TreeNode result = ConvertSortedArrayToBinarySearchTree.SortedArrayToBST(sortArr);
+        Assert.IsTrue(InvertBinaryTree.CompareTrees(tree.root, result));
+    }
+
+    [TestMethod]
+    public void ReverseBitTest()
+    {
+        uint t = 43261596;
+        Assert.IsTrue( ReverseBits.reverseBits(t) == 964176192);
+
+
     }
 }
