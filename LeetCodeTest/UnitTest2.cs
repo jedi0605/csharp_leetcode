@@ -231,8 +231,43 @@ public class UnitTest2
     public void ReverseBitTest()
     {
         uint t = 43261596;
-        Assert.IsTrue( ReverseBits.reverseBits(t) == 964176192);
+        Assert.IsTrue(ReverseBits.reverseBits(t) == 964176192);
+    }
 
 
+    [TestMethod]
+    public void SubtreeOfAnotherTreeTest()
+    {
+        int?[] rootArr = { 3, 4, 5, 1, 2 };
+        BinaryTree root = new BinaryTree(rootArr);
+
+        int?[] subArr = { 4, 1, 2 };
+        BinaryTree sub = new BinaryTree(subArr);
+
+        Assert.IsTrue(SubtreeOfAnotherTree.IsSubtree(root.root, sub.root));
+    }
+
+    [TestMethod]
+    public void SubtreeOfAnotherTreeTest2()
+    {
+        int?[] rootArr = { 3, 4, 5, 1, 2, null, null, null, null, 0 };
+        BinaryTree root = new BinaryTree(rootArr);
+
+        int?[] subArr = { 4, 1, 2 };
+        BinaryTree sub = new BinaryTree(subArr);
+
+        Assert.IsTrue(SubtreeOfAnotherTree.IsSubtree(root.root, sub.root) == false);
+    }
+
+    [TestMethod]
+    public void SubtreeOfAnotherTreeTest3()
+    {
+        int?[] rootArr = { 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, 2 };
+        BinaryTree root = new BinaryTree(rootArr);
+
+        int?[] subArr = {1,null,1,null,1,null,1,null,1,null,1,2 };
+        BinaryTree sub = new BinaryTree(subArr);
+
+        Assert.IsTrue(SubtreeOfAnotherTree.IsSubtree(root.root, sub.root));
     }
 }
