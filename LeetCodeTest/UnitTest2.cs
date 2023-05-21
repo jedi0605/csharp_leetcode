@@ -265,9 +265,18 @@ public class UnitTest2
         int?[] rootArr = { 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, 2 };
         BinaryTree root = new BinaryTree(rootArr);
 
-        int?[] subArr = {1,null,1,null,1,null,1,null,1,null,1,2 };
+        int?[] subArr = { 1, null, 1, null, 1, null, 1, null, 1, null, 1, 2 };
         BinaryTree sub = new BinaryTree(subArr);
 
         Assert.IsTrue(SubtreeOfAnotherTree.IsSubtree(root.root, sub.root));
+    }
+
+    [TestMethod]
+    public void SquaresOfSortedArrayTest()
+    {
+        int[] input = { -4, -1, 0, 3, 10 };
+        int[] result = SquaresOfSortedArray.SortedSquares(input);
+        int[] assertAns = { 0, 1, 9, 16, 100 };
+        Assert.IsTrue(result.SequenceEqual(assertAns));
     }
 }
