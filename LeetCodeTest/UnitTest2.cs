@@ -279,4 +279,12 @@ public class UnitTest2
         int[] assertAns = { 0, 1, 9, 16, 100 };
         Assert.IsTrue(result.SequenceEqual(assertAns));
     }
+
+    [TestMethod]
+    public void MaximumSubarrayTest()
+    {
+        int[] input = { -2, 2, 5, -11, 6 };
+        int res = MaximumSubarray.MaxSubArray(input);
+        Assert.IsTrue(res == 7);
+    }
 }
