@@ -45,11 +45,20 @@ namespace LeetCodeTest
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void UpdateMatrixBFSTest()
         {
             int[][] input = { new int[] { 0, 0, 0 }, new int[] { 0, 1, 0 }, new int[] { 1, 1, 1 } };
 
-            ZeroOneMatrix.UpdateMatrixBFS(input);
+            int[][] res = ZeroOneMatrix.UpdateMatrixBFS(input);
+        }
+
+        [TestMethod]
+        public void KClosestTest()
+        {
+            int[][] input = { new int[] { 1, 3 }, new int[] { -2, 2 } };
+            int[][] res = KClosestPointsOrigin.KClosest(input, 1);
+            int[][] ans = { new int[] { -2, 2 } };
+            Assert.IsTrue(CompareArrays(res, ans));
         }
     }
 }
