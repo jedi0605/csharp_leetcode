@@ -29,9 +29,25 @@ namespace LeetCodeTest
             }
             catch (System.Exception)
             {
-
                 throw;
             }
+        }
+
+        public static bool AreIListOfIListEqual(IList<IList<int>> list1, IList<IList<int>> list2)
+        {
+            if (list1.Count != list2.Count)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < list1.Count; i++)
+            {
+                IList<int> sublist1 = list1[i];
+                IList<int> sublist2 = list2[i];
+                if (!sublist1.SequenceEqual(sublist2))
+                    return false;
+            }
+            return true;
         }
 
         [TestMethod]
@@ -59,6 +75,38 @@ namespace LeetCodeTest
             int[][] res = KClosestPointsOrigin.KClosest(input, 1);
             int[][] ans = { new int[] { -2, 2 } };
             Assert.IsTrue(CompareArrays(res, ans));
+        }
+
+        [TestMethod]
+        public void LongestSubstringWithoutRepeatingCharactersTest()
+        {
+            string case1 = "abcabcbb";
+            int assert = 3;
+            Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstring(case1) == assert);
+            Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters.LengthOfLongestSubstringSlidingWindow(case1) == assert);
+        }
+
+        [TestMethod]
+        public void ThreeSumTest()
+        {
+            int[] nums = { -1, 0, 1, 2, -1, -4 };
+            IList<IList<int>> res = ThreeSum.Sum(nums);
+            Assert.IsTrue(res.Count == 2);
+        }
+
+        [TestMethod]
+        public void BinaryTreeLevelOrderTraversalTest()
+        {
+            int?[] nums = { 3, 9, 20, null, null, 15, 7 };
+            BinaryTree tree = new BinaryTree(nums);
+
+            IList<IList<int>> res = BinaryTreeLevelOrderTraversal.LevelOrder(tree.root);
+            IList<IList<int>> answer = new List<IList<int>>(){
+                new List<int> {3},
+                new List<int> {9,20},
+                new List<int> {15,7},
+            };
+            Assert.IsTrue(AreIListOfIListEqual(res,answer));
         }
     }
 }
