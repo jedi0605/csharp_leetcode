@@ -106,7 +106,30 @@ namespace LeetCodeTest
                 new List<int> {9,20},
                 new List<int> {15,7},
             };
-            Assert.IsTrue(AreIListOfIListEqual(res,answer));
+            Assert.IsTrue(AreIListOfIListEqual(res, answer));
+        }
+
+        [TestMethod]
+        public void CloneGraphTest()
+        {
+            Node node1 = new Node(1);
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+            Node node4 = new Node(4);
+
+            node1.neighbors.Add(node2);
+            node1.neighbors.Add(node4);
+
+            node2.neighbors.Add(node1);
+            node2.neighbors.Add(node3);
+
+            node3.neighbors.Add(node2);
+            node3.neighbors.Add(node4);
+
+            node4.neighbors.Add(node1);
+            node4.neighbors.Add(node3);
+
+            Node deepRes = CloneGraph.DeepCloneGraph(node1);
         }
     }
 }
