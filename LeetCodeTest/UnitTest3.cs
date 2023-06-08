@@ -131,5 +131,14 @@ namespace LeetCodeTest
 
             Node deepRes = CloneGraph.DeepCloneGraph(node1);
         }
+
+        [TestMethod]
+        public void EvaluateReversePolishNotationTest()
+        {
+            string[] toke = { "2", "1", "+", "3", "*" };
+            Assert.IsTrue(EvaluateReversePolishNotation.EvalRPN(toke) == 9);
+            string[] toke2 = { "4", "13", "5", "/", "+" };
+            Assert.IsTrue(EvaluateReversePolishNotation.EvalRPN(toke2) == 6);
+        }
     }
 }
