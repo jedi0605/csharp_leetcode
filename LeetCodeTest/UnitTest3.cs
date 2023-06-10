@@ -209,5 +209,15 @@ namespace LeetCodeTest
             int amount = 6249;
             Assert.IsTrue(CoinChange.Change(coins, amount) == 20);
         }
+
+        [TestMethod]
+        public void ProductExceptSelfTest()
+        {
+            ProductOfArrayExceptSelf solution = new ProductOfArrayExceptSelf();
+            int[] nums = { 1, 2, 3, 4 };
+            int[] ans = { 24, 12, 8, 6 };
+            int[] res = solution.ProductExceptSelf(nums);
+            Assert.IsTrue(res.SequenceEqual(ans));
+        }
     }
 }
