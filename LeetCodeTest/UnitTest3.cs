@@ -184,5 +184,30 @@ namespace LeetCodeTest
             Assert.IsTrue(t.Search(preWord) == false);
             Assert.IsTrue(t.StartsWith(preWord) == true);
         }
+
+
+        [TestMethod]
+        public void CoinChangeTest()
+        {
+            int[] coins = { 1, 2, 5 };
+            int amount = 11;
+            Assert.IsTrue(CoinChange.Change(coins, amount) == 3);
+
+            int[] coins2 = { 2 };
+            int amount2 = 3;
+            Assert.IsTrue(CoinChange.Change(coins2, amount2) == -1);
+
+            int[] coins3 = { 2, 5, 10, 1 };
+            int amount3 = 27;
+            Assert.IsTrue(CoinChange.Change(coins3, amount3) == 4);
+        }
+
+        [TestMethod]
+        public void CoinChangeTest2()
+        {
+            int[] coins = { 186, 419, 83, 408 };
+            int amount = 6249;
+            Assert.IsTrue(CoinChange.Change(coins, amount) == 20);
+        }
     }
 }
