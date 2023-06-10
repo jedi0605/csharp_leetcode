@@ -140,5 +140,49 @@ namespace LeetCodeTest
             string[] toke2 = { "4", "13", "5", "/", "+" };
             Assert.IsTrue(EvaluateReversePolishNotation.EvalRPN(toke2) == 6);
         }
+
+
+        [TestMethod]
+        public void CourseScheduleTest()
+        {
+            int numCourses = 8;
+            int[][] prerequisites = { new int[] { 1, 0 }, new int[] { 2, 6 }, new int[] { 1, 7 }, new int[] { 5, 1 }, new int[] { 6, 4 }, new int[] { 7, 0 }, new int[] { 0, 5 } };
+            CourseSchedule cs = new CourseSchedule();
+            bool res = cs.CanFinish(numCourses, prerequisites);
+        }
+
+
+        [TestMethod]
+        public void CourseScheduleTest2()
+        {
+            int numCourses = 5;
+            int[][] prerequisites = { new int[] { 2, 0 }, new int[] { 2, 1 }, new int[] { 4, 2 }, new int[] { 4, 3 } };
+            CourseSchedule cs = new CourseSchedule();
+            bool res = cs.CanFinish(numCourses, prerequisites);
+        }
+
+        [TestMethod]
+        public void ImplementTrieTest()
+        {
+            string word = "apple";
+            string preWord = "app";
+            TrieHashVer t = new TrieHashVer();
+            t.Insert(word);
+            Assert.IsTrue(t.Search(word));
+            Assert.IsTrue(t.Search(preWord) == false);
+            Assert.IsTrue(t.StartsWith(preWord) == true);
+        }
+
+        [TestMethod]
+        public void ImplementTrieTest2()
+        {
+            string word = "apple";
+            string preWord = "app";
+            Trie t = new Trie();
+            t.Insert(word);
+            Assert.IsTrue(t.Search(word));
+            Assert.IsTrue(t.Search(preWord) == false);
+            Assert.IsTrue(t.StartsWith(preWord) == true);
+        }
     }
 }
