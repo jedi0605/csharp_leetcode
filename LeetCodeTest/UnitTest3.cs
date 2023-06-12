@@ -219,5 +219,24 @@ namespace LeetCodeTest
             int[] res = solution.ProductExceptSelf(nums);
             Assert.IsTrue(res.SequenceEqual(ans));
         }
+
+        [TestMethod]
+        public void ValidateBinarySearchTreeTest()
+        {
+            int?[] treeNode = { 50, 30, 70, 20, 45, 60, 100 };
+            BinaryTree t = new BinaryTree(treeNode);
+            bool res = ValidateBinarySearchTree.IsValidBST(t.root);
+            Assert.IsTrue(res);            
+        }
+
+        [TestMethod]
+        public void ValidateBinarySearchTreeStaskTest()
+        {
+            int?[] treeNode = { 50, 30, 70, 20, 45, 60, 100 };
+            BinaryTree t = new BinaryTree(treeNode);
+            bool res = ValidateBinarySearchTree.IsValidBSTStackApproach(t.root);
+            Assert.IsTrue(res);            
+        }
+
     }
 }
