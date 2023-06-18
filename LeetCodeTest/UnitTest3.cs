@@ -258,8 +258,39 @@ namespace LeetCodeTest
                 new int[] { 1,1,0 },
                 new int[] { 0,1,1 }};
 
-            int res = RottingOranges.OrangesRotting(grid);            
+            int res = RottingOranges.OrangesRotting(grid);
             Assert.IsTrue(res == 4);
+        }
+
+        [TestMethod]
+        public void SearchInRotatedSortedArrayTest()
+        {
+            int[] nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
+            Assert.IsTrue(SearchInRotatedSortedArray2.GetMinIndex(nums) == 4);
+
+
+            int[] nums2 = new int[] { 0, 1, 2, 3, 4, 5, 6 };
+            Assert.IsTrue(SearchInRotatedSortedArray2.GetMinIndex(nums2) == 0);
+
+        }
+
+        [TestMethod]
+        public void SearchInRotatedSortedArray2Test()
+        {
+            int[] nums = new int[] { 4, 5, 6, 7, 0, 1, 2 };
+            Assert.IsTrue(SearchInRotatedSortedArray2.Search(nums, 0) == 4);
+
+            Assert.IsTrue(SearchInRotatedSortedArray2.Search(nums, 3) == -1);
+
+            Assert.IsTrue(SearchInRotatedSortedArray2.Search(nums, 1) == 5);
+        }
+
+        [TestMethod]
+        public void SearchInRotatedSortedArray3Test()
+        {
+            int[] nums = new int[] { 1, 3 };
+            Assert.IsTrue(SearchInRotatedSortedArray2.Search(nums, 3) == 1);
+
         }
 
     }
