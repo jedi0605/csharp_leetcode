@@ -226,7 +226,7 @@ namespace LeetCodeTest
             int?[] treeNode = { 50, 30, 70, 20, 45, 60, 100 };
             BinaryTree t = new BinaryTree(treeNode);
             bool res = ValidateBinarySearchTree.IsValidBST(t.root);
-            Assert.IsTrue(res);            
+            Assert.IsTrue(res);
         }
 
         [TestMethod]
@@ -235,7 +235,31 @@ namespace LeetCodeTest
             int?[] treeNode = { 50, 30, 70, 20, 45, 60, 100 };
             BinaryTree t = new BinaryTree(treeNode);
             bool res = ValidateBinarySearchTree.IsValidBSTStackApproach(t.root);
-            Assert.IsTrue(res);            
+            Assert.IsTrue(res);
+        }
+
+        [TestMethod]
+        public void NumberOfIslandsDFSTest()
+        {
+            char[][] input = {
+                new char[] { '1','1','1','1','0'},
+                new char[] { '1','1','0','1','0' },
+                new char[] { '1','1','0','0','0' },
+                new char[] { '0','0','0','0','0' }};
+            int res = NumberOfIslands.NumIslands(input);
+            Assert.IsTrue(res == 1);
+        }
+
+        [TestMethod]
+        public void RottingOrangesTest()
+        {
+            int[][] grid = {
+                new int[] { 2,1,1},
+                new int[] { 1,1,0 },
+                new int[] { 0,1,1 }};
+
+            int res = RottingOranges.OrangesRotting(grid);            
+            Assert.IsTrue(res == 4);
         }
 
     }
