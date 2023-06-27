@@ -290,8 +290,45 @@ namespace LeetCodeTest
         {
             int[] nums = new int[] { 1, 3 };
             Assert.IsTrue(SearchInRotatedSortedArray2.Search(nums, 3) == 1);
-
         }
 
+        [TestMethod]
+        public void CombinationSumTest()
+        {
+            int[] nums = new int[] { 2, 3, 6, 7 };
+            CombinationSum.Sum(nums, 7);
+        }
+
+        [TestMethod]
+        public void PermutationTest()
+        {
+            int[] nums = new int[] { 1, 2, 3 };
+            IList<IList<int>> res = Permutations.Permute(nums);
+            Assert.IsTrue(res.Count == 6);
+        }
+
+        [TestMethod]
+        public void MergeIntervalsTest()
+        {
+            int[][] nums =
+             {
+                new int[]{1,4},
+                new int[]{4,5}
+                 };
+            int[][] res = MergeIntervals.Merge(nums);
+        }
+
+        [TestMethod]
+        public void MergeIntervalsTest2()
+        {
+            int[][] nums =
+             {
+                new int[]{1,3},
+                new int[]{2,6},
+                new int[]{8,10},
+                new int[]{15,18},
+                 };
+            int[][] res = MergeIntervals.Merge(nums);
+        }
     }
 }
