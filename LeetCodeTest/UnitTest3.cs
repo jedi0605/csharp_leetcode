@@ -330,5 +330,25 @@ namespace LeetCodeTest
                  };
             int[][] res = MergeIntervals.Merge(nums);
         }
+
+        [TestMethod]
+        public void LowestCommonAncestorOfABinaryTreeTest()
+        {
+            int?[] node = { 3, 5, 1, 6, 2, 0, 8, null, null, 7, 4 };
+            BinaryTree t = new BinaryTree(node);
+            TreeNode p = new TreeNode(5);
+            TreeNode q = new TreeNode(1);
+            TreeNode ans = LowestCommonAncestorOfABinaryTree.LowestCommonAncestor(t.root, p, q);
+            Assert.IsTrue(ans.val == 3);
+        }
+
+        [TestMethod]
+        public void TimeBasedKeyValueStoreTest()
+        {
+            TimeMap map = new TimeMap();
+            map.Set("foo", "bar", 1);
+            map.Set("foo", "bar2", 4);
+            map.Get("foo", 5);
+        }
     }
 }
