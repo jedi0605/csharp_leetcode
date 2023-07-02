@@ -350,5 +350,28 @@ namespace LeetCodeTest
             map.Set("foo", "bar2", 4);
             map.Get("foo", 5);
         }
+
+        [TestMethod]
+        public void AccountsMergeTest()
+        {
+            List<string> a1 = new List<string> { "John", "johnsmith@mail.com", "john_newyork@mail.com" };
+            List<string> a2 = new List<string> { "John", "johnsmith@mail.com", "john00@mail.com" };
+            List<string> a3 = new List<string> { "Mary", "mary@mail.com" };
+            List<string> a4 = new List<string> { "John", "johnnybravo@mail.com" };
+            IList<IList<string>> accounts = new List<IList<string>>() { a1, a2, a3, a4 };
+
+            var res = AccountsMerge.Merge(accounts);
+        }
+
+        /// <summary>
+        /// Leetcode 547
+        /// </summary>
+        [TestMethod]
+        public void NumberOfProvincesTest()
+        {
+            int[][] isConnected = { new int[] { 1, 1, 0 }, new int[] { 1, 1, 0 }, new int[] { 0, 0, 1 } };
+            int res = DisjointSet547.FromMatrix(isConnected).Graphs;
+            Assert.IsTrue(res == 2);
+        }
     }
 }
