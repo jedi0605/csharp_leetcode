@@ -382,8 +382,52 @@ namespace LeetCodeTest
         {
             int[] color = new int[] { 2, 0, 2, 1, 1, 0 };
             SortColors.Sort(color);
+        }
 
-            
+
+        /// <summary>
+        /// Leetcode 139. Word Break
+        /// </summary>
+        [TestMethod]
+        public void WordBreakTest()
+        {
+            string s = "leetcode";
+            List<string> wordDict = new List<string> { "leet", "code" };
+            Assert.IsTrue(WordBreak.Check(s, wordDict));
+        }
+
+        /// <summary>
+        /// Leetcode 139. Word Break
+        /// </summary>
+        [TestMethod]
+        public void PairsWithSpecificDifferenceTest()
+        {
+            int[] arr = new int[] { 0, -1, -2, 2, 1 };
+            int[,] res = PairsWithSpecificDifference.FindPairsWithGivenDifference(arr, 1);
+        }
+
+        /// <summary>
+        /// 416. Partition Equal Subset Sum
+        /// </summary>
+        [TestMethod]
+        public void PartitionEqualSubsetSumTest()
+        {
+            int[] arr = new int[] { 1, 5, 11, 5 };
+            Assert.IsTrue(PartitionEqualSubsetSum.CanPartition(arr));
+            Assert.IsTrue(PartitionEqualSubsetSum.CanPartition2(arr));
+
+        }
+
+        /// <summary>
+        /// 416. Partition Equal Subset Sum
+        /// </summary>
+        [TestMethod]
+        public void StringToIntegerAtoiTest()
+        {
+            Assert.IsTrue(StringToIntegerAtoi.MyAtoi("42") == 42);
+            Assert.IsTrue(StringToIntegerAtoi.MyAtoi("   -42") == -42);
+            Assert.IsTrue(StringToIntegerAtoi.MyAtoi("4193 with words") == 4193);
+            Assert.IsTrue(StringToIntegerAtoi.MyAtoi("-91283472332") == -2147483648);
         }
     }
 }
