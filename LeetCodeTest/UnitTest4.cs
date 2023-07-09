@@ -41,5 +41,20 @@ namespace LeetCodeTest
             IList<int> res = BinaryTreeRightSideView.RightSideView(tree.root);
             Assert.IsTrue(res.Count == 3);
         }
+
+        [TestMethod]
+        public void LongestPalindromicSubstringTest()
+        {
+            string s = "aabbaa";
+            Assert.IsTrue(LongestPalindromicSubstring.LongestPalindrome(s) == s);
+        }
+
+        [TestMethod]
+        public void UniquePathsTest()
+        {
+            Assert.IsTrue(UniquePaths.GetPaths(3, 7) == 28);
+            // Assert.IsTrue(LongestPalindromicSubstring.LongestPalindrome(s) == s);
+        }
+
     }
 }
