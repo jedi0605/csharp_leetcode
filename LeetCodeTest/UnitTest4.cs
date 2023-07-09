@@ -24,5 +24,22 @@ namespace LeetCodeTest
             IList<int> res = SpiralMatrixReview.SpiralOrder(input);
             Assert.IsTrue(res.Count == 12);
         }
+
+        [TestMethod]
+        public void SubSetsTest()
+        {
+            int[] nums = new int[] { 1, 2, 3 };
+            IList<IList<int>> res = Subsets.GetSubsets(nums);
+            Assert.IsTrue(res.Count == 8);
+        }
+
+        [TestMethod]
+        public void BinaryTreeRightSideViewTest()
+        {
+            int?[] nums = new int?[] { 1, 2, 3, null, 5, null, 4 };
+            BinaryTree tree = new BinaryTree(nums);
+            IList<int> res = BinaryTreeRightSideView.RightSideView(tree.root);
+            Assert.IsTrue(res.Count == 3);
+        }
     }
 }
