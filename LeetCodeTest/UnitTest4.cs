@@ -75,5 +75,14 @@ namespace LeetCodeTest
             Assert.IsTrue(w.MaxArea(height) == 49);
         }
 
+        [TestMethod]
+        public void LetterCombinationsTest()
+        {
+            string digits = "23";
+            LetterCombinations w = new LetterCombinations();
+            IList<string> res = w.Combinations(digits);
+            Assert.IsTrue( res.Count == 9);
+        }
+
     }
 }
