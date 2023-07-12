@@ -56,5 +56,16 @@ namespace LeetCodeTest
             // Assert.IsTrue(LongestPalindromicSubstring.LongestPalindrome(s) == s);
         }
 
+        [TestMethod]
+        public void ConstructBinaryTreeFromPreorderAndInorderTraversalTest()
+        {
+            int[] preOrder = new int[] { 3, 9, 20, 15, 7 };
+            int[] inOrder = new int[] { 9, 3, 15, 20, 7 };
+            ConstructBinaryTreeFromPreorderAndInorderTraversal.BuildTree(preOrder, inOrder);
+            ConstructBinaryTreeFromPreorderAndInorderTraversal.BuildTreeV2(preOrder, inOrder);
+
+            // Assert.IsTrue(LongestPalindromicSubstring.LongestPalindrome(s) == s);
+        }
+
     }
 }
