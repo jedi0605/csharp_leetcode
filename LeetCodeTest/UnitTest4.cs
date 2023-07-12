@@ -63,8 +63,16 @@ namespace LeetCodeTest
             int[] inOrder = new int[] { 9, 3, 15, 20, 7 };
             ConstructBinaryTreeFromPreorderAndInorderTraversal.BuildTree(preOrder, inOrder);
             ConstructBinaryTreeFromPreorderAndInorderTraversal.BuildTreeV2(preOrder, inOrder);
-
             // Assert.IsTrue(LongestPalindromicSubstring.LongestPalindrome(s) == s);
+        }
+
+
+        [TestMethod]
+        public void ContainerWithMostWaterTest()
+        {
+            int[] height = new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+            ContainerWithMostWater w = new ContainerWithMostWater();
+            Assert.IsTrue(w.MaxArea(height) == 49);
         }
 
     }
