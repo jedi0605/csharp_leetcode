@@ -81,7 +81,35 @@ namespace LeetCodeTest
             string digits = "23";
             LetterCombinations w = new LetterCombinations();
             IList<string> res = w.Combinations(digits);
-            Assert.IsTrue( res.Count == 9);
+            Assert.IsTrue(res.Count == 9);
+        }
+
+        [TestMethod]
+        public void WordSearchTest()
+        {
+            string word = "ABCCED";
+            char[][] board = new char[][] { new char[] { 'A', 'B', 'C', 'E' }, new char[] { 'S', 'F', 'C', 'S' }, new char[] { 'A', 'D', 'E', 'E' } };
+            WordSearch solution = new WordSearch();
+
+            Assert.IsTrue(solution.Exist(board, word));
+        }
+
+        [TestMethod]
+        public void FindAllAnagramsAnAStringTest()
+        {
+            string word = "abc";
+            FindAllAnagramsInAString t = new FindAllAnagramsInAString();
+            t.FindAnagrams("cbaebabacd", word);
+
+        }
+
+        [TestMethod]
+        public void FindAllAnagramsAnAString2Test()
+        {
+            string word = "aa";
+            FindAllAnagramsInAString t = new FindAllAnagramsInAString();
+            t.FindAnagrams("baa", word);
+
         }
 
     }
