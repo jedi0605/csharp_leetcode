@@ -109,8 +109,46 @@ namespace LeetCodeTest
             string word = "aa";
             FindAllAnagramsInAString t = new FindAllAnagramsInAString();
             t.FindAnagrams("baa", word);
-
+            int n = 1;
+            int[,] dp = new int[n, 5];
         }
 
+        [TestMethod]
+        public void CountStringPermutationsTest()
+        {
+            int n = 764;
+            int res = CountStringPermutations.countPerms(764);
+            Assert.IsTrue(CountStringPermutations.countPerms(764) == 888683244);
+        }
+
+
+        [TestMethod]
+        public void KeyboardTest()
+        {
+            string s = "423692";
+            string keypad = "923857614";
+            int res = Keyboard.entryTime(s, keypad);
+            Assert.IsTrue(res == 8);
+        }
+
+        [TestMethod]
+        public void BalanceSumTest()
+        {
+            List<int> arr = new List<int> { 1, 2, 3, 3 };
+            string t = BalanceSum.BalancedSumString(arr);
+
+            List<int> arr2 = new List<int> { 1, 2, 1, 1 };
+            string t2 = BalanceSum.BalancedSumString(arr2);
+        }
+
+        [TestMethod]
+        public void InheritanceTest()
+        {
+            Box0 box0 = null;
+            Box1 box1 = new Box2();
+            box0 = box1;
+            string s = box0.GetText();
+            
+        }
     }
 }
