@@ -148,7 +148,16 @@ namespace LeetCodeTest
             Box1 box1 = new Box2();
             box0 = box1;
             string s = box0.GetText();
-            
+        }
+
+        [TestMethod]
+        public void MinimumHeightTreesTesst()
+        {
+            int n = 6;
+            int[][] input = new int[][] { new int[] { 3, 0 }, new int[] { 3, 1 }, new int[] { 3, 2 }, new int[] { 3, 4 }, new int[] { 5, 4 } };
+            MinimumHeightTrees t = new MinimumHeightTrees();
+            IList<int> res = t.FindMinHeightTrees(n, input);
+            Assert.IsTrue(res.Count == 2);
         }
     }
 }
