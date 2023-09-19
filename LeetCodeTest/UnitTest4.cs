@@ -159,5 +159,14 @@ namespace LeetCodeTest
             IList<int> res = t.FindMinHeightTrees(n, input);
             Assert.IsTrue(res.Count == 2);
         }
+
+        [TestMethod]
+        public void TaskSchedulerTesst()
+        {
+            int n = 2;
+            char [] task = new char[]{'A','A','A','B','B','B'};
+            LeetCodeLib.TaskScheduler taskScheduler = new LeetCodeLib.TaskScheduler();
+            Assert.IsTrue( taskScheduler.LeastInterval(task,n) == 8);
+        }
     }
 }
