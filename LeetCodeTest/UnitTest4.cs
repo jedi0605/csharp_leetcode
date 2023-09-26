@@ -164,9 +164,24 @@ namespace LeetCodeTest
         public void TaskSchedulerTesst()
         {
             int n = 2;
-            char [] task = new char[]{'A','A','A','B','B','B'};
+            char[] task = new char[] { 'A', 'A', 'A', 'B', 'B', 'B' };
             LeetCodeLib.TaskScheduler taskScheduler = new LeetCodeLib.TaskScheduler();
-            Assert.IsTrue( taskScheduler.LeastInterval(task,n) == 8);
+            Assert.IsTrue(taskScheduler.LeastInterval(task, n) == 8);
+        }
+
+        [TestMethod]
+        public void LRUCacheTesst()
+        {            
+            LRUCache cache = new LRUCache(2);
+            cache.Put(1, 1);
+            cache.Put(2, 2);
+            Assert.IsTrue(cache.Get(1) == 1);
+            cache.Put(3, 3);
+            Assert.IsTrue(cache.Get(2) == -1);
+            cache.Put(4, 4);
+            Assert.IsTrue(cache.Get(1) == -1);
+            Assert.IsTrue(cache.Get(3) == 3);
+            Assert.IsTrue(cache.Get(4) == 4);
         }
     }
 }
