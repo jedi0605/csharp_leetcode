@@ -171,7 +171,7 @@ namespace LeetCodeTest
 
         [TestMethod]
         public void LRUCacheTesst()
-        {            
+        {
             LRUCache cache = new LRUCache(2);
             cache.Put(1, 1);
             cache.Put(2, 2);
@@ -182,6 +182,26 @@ namespace LeetCodeTest
             Assert.IsTrue(cache.Get(1) == -1);
             Assert.IsTrue(cache.Get(3) == 3);
             Assert.IsTrue(cache.Get(4) == 4);
+        }
+
+        [TestMethod]
+        public void ValidSudokuTest()
+        {
+            int test = 0/3;
+            int test2 = 2/3;
+            char[][] board = new char[][] {
+                new char[] {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+                new char[] {'4', '.', '.', '1', '9', '5', '.', '.', '.'},
+                new char[] {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+                new char[] {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+                new char[] {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+               new char[]  {'7', '.', '.', '.', '2', '.', '.','.', '6'},
+                new char[] {'.', '6','.', '.', '.', '.', '2', '8', '.'},
+                new char[] {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+                new char[] {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+                };
+            ValidSudoku valid = new ValidSudoku();
+            bool res = valid.IsValidSudoku(board);
         }
     }
 }
