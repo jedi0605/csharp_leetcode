@@ -202,6 +202,7 @@ namespace LeetCodeTest
                 };
             ValidSudoku valid = new ValidSudoku();
             bool res = valid.IsValidSudoku(board);
+            Assert.IsFalse(res);
         }
     }
 }
