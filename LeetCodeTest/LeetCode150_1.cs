@@ -36,4 +36,20 @@ public class LeetCode150_1
             Assert.AreEqual(ans[i], nums1[i]);
         }
     }
+
+    [TestMethod]
+    public void RemoveDuplicatesfromSortedArrayTest()
+    {
+        int[] nums1 = new int[] { 1, 1, 2 };
+        int[] ans1 = new int[] { 1, 2 };
+        int k = 2;
+
+        RemoveDuplicates sol = new RemoveDuplicates();
+
+        Assert.IsTrue(sol.Sol(nums1) == k);
+        for (int i = 0; i < ans1.Length; i++)
+        {
+            Assert.IsTrue( ans1[i] == nums1[i]);
+        }
+    }
 }

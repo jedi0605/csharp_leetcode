@@ -9,7 +9,16 @@ namespace LeetCodeLib
     {
         public int Sol(int[] nums)
         {
-            return 0;
+            int l = 1;
+            for (int r = 1; r < nums.Length; r++)
+            {
+                if (nums[r] != nums[r - 1])
+                {
+                    nums[l] = nums[r];
+                    l++;
+                }
+            }
+            return l;           
         }
     }
 }
