@@ -49,7 +49,23 @@ public class LeetCode150_1
         Assert.IsTrue(sol.Sol(nums1) == k);
         for (int i = 0; i < ans1.Length; i++)
         {
-            Assert.IsTrue( ans1[i] == nums1[i]);
+            Assert.IsTrue(ans1[i] == nums1[i]);
+        }
+    }
+
+    [TestMethod]
+    public void RemoveDuplicatesfromSortedArrayIITest()
+    {
+        int[] nums1 = new int[] { 0, 0, 1, 1, 1, 1, 2, 3, 3 };
+        int[] ans1 = new int[] { 0, 0, 1, 1, 2, 3, 3 };
+        int k = 7;
+
+        RemoveDuplicatesFromSortedArrayII sol = new RemoveDuplicatesFromSortedArrayII();
+
+        Assert.IsTrue(sol.RemoveDuplicates(nums1) == k);
+        for (int i = 0; i < ans1.Length; i++)
+        {
+            Assert.IsTrue(ans1[i] == nums1[i]);
         }
     }
 }
