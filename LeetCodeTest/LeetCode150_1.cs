@@ -1,5 +1,4 @@
 using LeetCodeLib;
-
 namespace LeetCodeTest;
 
 [TestClass]
