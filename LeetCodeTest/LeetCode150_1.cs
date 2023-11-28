@@ -80,10 +80,10 @@ public class LeetCode150_1
     [TestMethod]
     public void ReverseTest()
     {
-        int[] nums = { 1, 2, 3, 4, 5, 6};
+        int[] nums = { 1, 2, 3, 4, 5, 6 };
         int k = 3;
         RotateArray sol = new RotateArray();
-        sol._reverse(nums, 0, nums.Length - 1);        
+        sol._reverse(nums, 0, nums.Length - 1);
     }
 
     [TestMethod]
@@ -112,5 +112,23 @@ public class LeetCode150_1
         {
             Assert.IsTrue(nums[i] == res[i]);
         }
+    }
+
+    [TestMethod]
+    public void BestTimeBuySellStockTest()
+    {
+        int[] nums = { 7, 1, 5, 3, 6, 4 };
+        int ans = 5;
+        BestTimeBuySellStock sol = new BestTimeBuySellStock();
+        Assert.IsTrue(sol.MaxProfit(nums) == ans);        
+    }
+
+        [TestMethod]
+    public void BestTimeBuySellStockTest2()
+    {
+        int[] nums = { 7,6,4,3,1 };
+        int ans = 0;
+        BestTimeBuySellStock sol = new BestTimeBuySellStock();
+        Assert.IsTrue(sol.MaxProfit(nums) == ans);        
     }
 }
