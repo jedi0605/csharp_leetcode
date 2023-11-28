@@ -67,4 +67,50 @@ public class LeetCode150_1
             Assert.IsTrue(ans1[i] == nums1[i]);
         }
     }
+
+    [TestMethod]
+    public void MajorityElement2Test()
+    {
+        int[] nums = { 2, 2, 2, 1, 1, 1, 2, 2 };
+        MajorityElement2 c = new MajorityElement2();
+
+        Assert.IsTrue(c.MajorityElement(nums) == 2);
+    }
+
+    [TestMethod]
+    public void ReverseTest()
+    {
+        int[] nums = { 1, 2, 3, 4, 5, 6};
+        int k = 3;
+        RotateArray sol = new RotateArray();
+        sol._reverse(nums, 0, nums.Length - 1);        
+    }
+
+    [TestMethod]
+    public void RotateArrayTest()
+    {
+        int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
+        int k = 3;
+        RotateArray sol = new RotateArray();
+        sol.Rotate2(nums, k);
+        int[] res = { 5, 6, 7, 1, 2, 3, 4 };
+        for (int i = 0; i < res.Length; i++)
+        {
+            Assert.IsTrue(nums[i] == res[i]);
+        }
+    }
+
+    [TestMethod]
+    public void RotateArrayTest2()
+    {
+        int[] nums = { -1, -100, 3, 99 };
+        int k = 2;
+        RotateArray sol = new RotateArray();
+        sol.Rotate2(nums, k);
+        int[] res = { 3, 99, -1, -100 };
+        for (int i = 0; i < res.Length; i++)
+        {
+            Assert.IsTrue(nums[i] == res[i]);
+        }
+    }
 }
