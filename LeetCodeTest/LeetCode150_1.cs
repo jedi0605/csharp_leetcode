@@ -120,15 +120,33 @@ public class LeetCode150_1
         int[] nums = { 7, 1, 5, 3, 6, 4 };
         int ans = 5;
         BestTimeBuySellStock sol = new BestTimeBuySellStock();
-        Assert.IsTrue(sol.MaxProfit(nums) == ans);        
+        Assert.IsTrue(sol.MaxProfit(nums) == ans);
     }
 
-        [TestMethod]
+    [TestMethod]
     public void BestTimeBuySellStockTest2()
     {
-        int[] nums = { 7,6,4,3,1 };
+        int[] nums = { 7, 6, 4, 3, 1 };
         int ans = 0;
         BestTimeBuySellStock sol = new BestTimeBuySellStock();
-        Assert.IsTrue(sol.MaxProfit(nums) == ans);        
+        Assert.IsTrue(sol.MaxProfit(nums) == ans);
+    }
+
+    [TestMethod]
+    public void BestTimeBuySellStock2Test()
+    {
+        int[] nums = { 7, 1, 5, 3, 6, 4 };
+        int ans = 7;
+        int res = BestTimeBuySellStock2.MaxProfit(nums);
+        Assert.IsTrue(res == ans);
+    }
+
+    [TestMethod]
+    public void BestTimeBuySellStock2Test2()
+    {
+        int[] nums = { 7, 6, 4, 3, 1 };
+        int ans = 0;
+        int res = BestTimeBuySellStock2.MaxProfit(nums);
+        Assert.IsTrue(res == ans);
     }
 }
