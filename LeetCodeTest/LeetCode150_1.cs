@@ -165,4 +165,16 @@ public class LeetCode150_1
         res = JumpGame.CanJump2(nums3);
         Assert.IsTrue(res == false);
     }
+
+    [TestMethod]
+    public void JumpGameIITest1()
+    {
+        int[] nums = { 2, 3, 1, 1, 4 };
+        int res = JumpGameII.Jump(nums);
+        Assert.IsTrue(res == 2);
+
+        int[] nums2 = { 2, 3, 0, 1, 4 };
+        res = JumpGameII.Jump(nums2);
+        Assert.IsTrue(res == 2);
+    }
 }
