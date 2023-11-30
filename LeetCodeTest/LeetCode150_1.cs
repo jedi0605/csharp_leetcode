@@ -149,4 +149,20 @@ public class LeetCode150_1
         int res = BestTimeBuySellStock2.MaxProfit(nums);
         Assert.IsTrue(res == ans);
     }
+
+    [TestMethod]
+    public void JumpGameTest1()
+    {
+        int[] nums = { 2, 3, 1, 1, 4 };
+        bool res = JumpGame.CanJump2(nums);
+        Assert.IsTrue(res == true);
+
+        int[] nums2 = { 3, 2, 1, 0, 4 };
+        res = JumpGame.CanJump2(nums2);
+        Assert.IsTrue(res == false);
+
+        int[] nums3 = { 0, 1 };
+        res = JumpGame.CanJump2(nums3);
+        Assert.IsTrue(res == false);
+    }
 }
