@@ -177,4 +177,12 @@ public class LeetCode150_1
         res = JumpGameII.Jump(nums2);
         Assert.IsTrue(res == 2);
     }
+
+    [TestMethod]
+    public void HindexTest()
+    {
+        int[] nums = { 3, 0, 6, 1, 5 };
+        int res = Hindex.GetIndex2(nums);
+        Assert.IsTrue(res == 3);
+    }
 }
