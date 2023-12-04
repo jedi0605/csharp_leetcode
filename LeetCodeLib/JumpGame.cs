@@ -9,7 +9,6 @@ namespace LeetCodeLib
     {
         public static bool CanJump(int[] nums)
         {
-            bool res = false;
             int goal = 1;
             for (int i = nums.Length - 1 - 1; i >= 0; i--)
             {

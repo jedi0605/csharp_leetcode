@@ -1,3 +1,4 @@
+using System.Data;
 using LeetCodeLib;
 namespace LeetCodeTest;
 
@@ -184,5 +185,14 @@ public class LeetCode150_1
         int[] nums = { 3, 0, 6, 1, 5 };
         int res = Hindex.GetIndex2(nums);
         Assert.IsTrue(res == 3);
+    }
+
+    [TestMethod]
+    public void ProductOfArrayExceptSelf_2Test()
+    {
+        int[] nums = { 1, 2, 3, 4 };
+        int[] res = ProductOfArrayExceptSelf_2.ProductExceptSelf(nums);
+        int[] ans = { 24, 12, 8, 6 };
+        Assert.IsTrue(res.SequenceEqual(ans));
     }
 }
