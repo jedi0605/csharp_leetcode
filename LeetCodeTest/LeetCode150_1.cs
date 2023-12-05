@@ -195,4 +195,25 @@ public class LeetCode150_1
         int[] ans = { 24, 12, 8, 6 };
         Assert.IsTrue(res.SequenceEqual(ans));
     }
+
+    [TestMethod]
+    public void GasStationTest()
+    {
+        int[] gas = { 1, 2, 3, 4, 5 };
+        int[] cost = { 3, 4, 5, 1, 2, };
+        GasStation gasStation = new GasStation();
+        int index = gasStation.CanCompleteCircuit2(gas, cost);
+        Assert.IsTrue(index == 3);
+    }
+
+
+    [TestMethod]
+    public void GasStationTest2()
+    {
+        int[] gas = { 2, 3, 4 };
+        int[] cost = { 3, 4, 3 };
+        GasStation gasStation = new GasStation();
+        int index = gasStation.CanCompleteCircuit2(gas, cost);
+        Assert.IsTrue(index == -1);
+    }
 }
