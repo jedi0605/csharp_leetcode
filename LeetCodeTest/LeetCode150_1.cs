@@ -206,7 +206,6 @@ public class LeetCode150_1
         Assert.IsTrue(index == 3);
     }
 
-
     [TestMethod]
     public void GasStationTest2()
     {
@@ -215,5 +214,14 @@ public class LeetCode150_1
         GasStation gasStation = new GasStation();
         int index = gasStation.CanCompleteCircuit2(gas, cost);
         Assert.IsTrue(index == -1);
+    }
+
+    [TestMethod]
+    public void GasCandy()
+    {
+        int[] rating = { 1,0,2 };
+        Candy candy = new Candy();
+        int res = candy.GetCandy(rating);        
+        Assert.IsTrue(res == 5);
     }
 }
