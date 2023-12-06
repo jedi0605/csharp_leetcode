@@ -217,11 +217,22 @@ public class LeetCode150_1
     }
 
     [TestMethod]
-    public void GasCandy()
+    public void GetCandyTest()
     {
-        int[] rating = { 1,0,2 };
+        int[] rating = { 1, 0, 2 };
         Candy candy = new Candy();
-        int res = candy.GetCandy(rating);        
+        int res = candy.GetCandy(rating);
         Assert.IsTrue(res == 5);
+    }
+
+    [TestMethod]
+    public void TrappingRainWaterTest()
+    {
+        int[] height = { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+        TrappingRainWater trapping = new TrappingRainWater();
+        Assert.IsTrue(trapping.Trap2(height) == 6);
+
+        height = new int[] { 4, 2, 0, 3, 2, 5 };
+        Assert.IsTrue(trapping.Trap2(height) == 9);
     }
 }

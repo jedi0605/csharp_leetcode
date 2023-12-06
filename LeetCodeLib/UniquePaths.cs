@@ -32,7 +32,6 @@ namespace LeetCodeLib
     {
         public static int GetPaths(int m, int n)
         {
-            int res = 0;
             int[,] arr = new int[m, n];
 
             // last row will init to 1 > only one choose to last corner
