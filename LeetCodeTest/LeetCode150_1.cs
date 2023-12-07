@@ -235,4 +235,12 @@ public class LeetCode150_1
         height = new int[] { 4, 2, 0, 3, 2, 5 };
         Assert.IsTrue(trapping.Trap2(height) == 9);
     }
+
+    [TestMethod]
+    public void IntToRomanTest()
+    {
+        Assert.IsTrue(IntergerToRoman.IntToRoman(3) == "III");
+        Assert.IsTrue(IntergerToRoman.IntToRoman(58) == "LVIII");
+        Assert.IsTrue(IntergerToRoman.IntToRoman(1994) == "MCMXCIV");
+    }
 }
