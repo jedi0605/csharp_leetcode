@@ -250,6 +250,13 @@ public class LeetCode150_1
         Assert.IsTrue(LengthOfLastWord.LengthLastWord("Hello World") == 5);
         Assert.IsTrue(LengthOfLastWord.LengthLastWord("   fly me   to   the moon  ") == 4);
         Assert.IsTrue(LengthOfLastWord.LengthLastWord("luffy is still joyboy") == 6);
+    }
 
+    [TestMethod]
+    public void ReversewordsTest()
+    {
+        Assert.IsTrue(ReverseWordsInAString.ReverseWords2("the sky is blue") == "blue is sky the");
+        Assert.IsTrue(ReverseWordsInAString.ReverseWords2("  hello world  ") == "world hello");
+        Assert.IsTrue(ReverseWordsInAString.ReverseWords2("a good   example") == "example good a");
     }
 }
