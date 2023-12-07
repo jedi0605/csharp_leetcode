@@ -243,4 +243,13 @@ public class LeetCode150_1
         Assert.IsTrue(IntergerToRoman.IntToRoman(58) == "LVIII");
         Assert.IsTrue(IntergerToRoman.IntToRoman(1994) == "MCMXCIV");
     }
+
+    [TestMethod]
+    public void LengthOfLastWordTest()
+    {
+        Assert.IsTrue(LengthOfLastWord.LengthLastWord("Hello World") == 5);
+        Assert.IsTrue(LengthOfLastWord.LengthLastWord("   fly me   to   the moon  ") == 4);
+        Assert.IsTrue(LengthOfLastWord.LengthLastWord("luffy is still joyboy") == 6);
+
+    }
 }
