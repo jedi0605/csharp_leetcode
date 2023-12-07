@@ -32,5 +32,21 @@ namespace LeetCodeLib
             }
             return prefix;
         }
+
+        public static string GetCommonPrefix2(string[] strs)
+        {
+            string shortest = strs.OrderBy(x => x.Length).First();
+            string res = "";
+            for (int i = 0; i < shortest.Length; i++)
+            {
+                foreach (var item in strs)
+                {
+                    if (item.Length == i || item[i] != shortest[i])
+                        return res;
+                }
+                res += shortest[i];
+            }
+            return res;
+        }
     }
 }

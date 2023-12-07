@@ -137,8 +137,9 @@ public class UnitTest2
     {
         string[] input = { "flower", "flow", "flight" };
         string[] input2 = { "dog", "racecar", "car" };
-        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix(input) == "fl");
-        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix(input2) == "");
+
+        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix2(input) == "fl");
+        Assert.IsTrue(LongestCommonPrefix.GetCommonPrefix2(input2) == "");
     }
 
     [TestMethod]
