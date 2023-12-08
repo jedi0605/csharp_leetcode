@@ -30,7 +30,6 @@ namespace LeetCodeLib
             int i = 0;
             int j = arr.Length - 1;
 
-
             while (i < j)
             {
                 (arr[i], arr[j]) = (arr[j], arr[i]);

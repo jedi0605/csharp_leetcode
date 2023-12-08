@@ -259,4 +259,12 @@ public class LeetCode150_1
         Assert.IsTrue(ReverseWordsInAString.ReverseWords2("  hello world  ") == "world hello");
         Assert.IsTrue(ReverseWordsInAString.ReverseWords2("a good   example") == "example good a");
     }
+
+    [TestMethod]
+    public void ZigzagConversionTest()
+    {
+        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING",3) == "PAHNAPLSIIGYIR");
+        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING",4) == "PINALSIGYAHRPI");
+
+    }
 }
