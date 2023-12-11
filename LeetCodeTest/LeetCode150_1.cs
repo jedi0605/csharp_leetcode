@@ -263,8 +263,29 @@ public class LeetCode150_1
     [TestMethod]
     public void ZigzagConversionTest()
     {
-        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING",3) == "PAHNAPLSIIGYIR");
-        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING",4) == "PINALSIGYAHRPI");
+        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING", 3) == "PAHNAPLSIIGYIR");
+        Assert.IsTrue(ZigzagConversion.Convert3("PAYPALISHIRING", 4) == "PINALSIGYAHRPI");
+    }
 
+    [TestMethod]
+    public void FindIndexOfTFirstOccurrenceInStringTest()
+    {
+        Assert.IsTrue(FindIndexOfTFirstOccurrenceInString.StrStr("sadbutsad", "sad") == 0);
+        Assert.IsTrue(FindIndexOfTFirstOccurrenceInString.StrStr("leetcode", "leeto") == -1);
+        Assert.IsTrue(FindIndexOfTFirstOccurrenceInString.StrStr("a", "a") == 0);
+        Assert.IsTrue(FindIndexOfTFirstOccurrenceInString.StrStr("abc", "c") == 2);
+    }
+
+    [TestMethod]
+    public void TextJustificationTets()
+    {
+        string[] input = new string[] { "This", "is", "an", "example", "of", "text", "justification." };
+
+        IList<string> res = TextJustification.FullJustify(input, 16);
+        string[] ans = new string[] { "This    is    an", "example  of text", "justification.  " };
+        for (int i = 0; i < res.Count; i++)
+        {
+            Assert.IsTrue(res[i] == ans[i]);
+        }
     }
 }
