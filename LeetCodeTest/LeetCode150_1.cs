@@ -300,4 +300,14 @@ public class LeetCode150_1
         string t1 = "ahbgdc";
         Assert.IsTrue(IsSubsequence.IsSub(s1, t1) == false);
     }
+
+    [TestMethod]
+    public void TwoSumIITest()
+    {
+        int target = 9;
+        int[] nums = new int[] { 2, 7, 11, 15 };
+        var res = TwoSumII.TwoSum(nums, target);
+        int[] ans = new int[] { 1, 2 };
+        Assert.IsTrue(res.SequenceEqual(ans));
+    }
 }
