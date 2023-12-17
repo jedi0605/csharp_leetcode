@@ -288,4 +288,16 @@ public class LeetCode150_1
             Assert.IsTrue(res[i] == ans[i]);
         }
     }
+
+    [TestMethod]
+    public void IsSubsequenceTest()
+    {
+        string s = "abc";
+        string t = "ahbgdc";
+        Assert.IsTrue(IsSubsequence.IsSub(s, t));
+
+        string s1 = "axc";
+        string t1 = "ahbgdc";
+        Assert.IsTrue(IsSubsequence.IsSub(s1, t1) == false);
+    }
 }
