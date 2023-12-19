@@ -1,4 +1,5 @@
 using System.Data;
+using System.Runtime;
 using LeetCodeLib;
 namespace LeetCodeTest;
 
@@ -315,7 +316,7 @@ public class LeetCode150_1
     public void ThreeSum2IITest()
     {
         // int[] nums = { -1, 0, 1, 2, -1, -4 };
-        int[] nums = { 0,0,0};
+        int[] nums = { 0, 0, 0 };
         IList<IList<int>> res = ThreeSum2.Sum(nums);
         IList<IList<int>> ans = new List<IList<int>>();
         ans.Add(new List<int>() { -1, -1, 2 });
@@ -330,5 +331,13 @@ public class LeetCode150_1
                 Assert.AreEqual(res[i][j], ans[i][j], $"Mismatch at index {i},{j}");
             }
         }
+    }
+
+    [TestMethod]
+    public void MinimumSizeSubarraySumTest()
+    {
+        int[] nums = new int[] { 2, 3, 1, 2, 4, 3 };
+        int target = 7;
+        Assert.IsTrue(MinimumSizeSubarraySum.MinSubArrayLen(target, nums) == 2);
     }
 }
