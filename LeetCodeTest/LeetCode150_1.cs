@@ -310,4 +310,25 @@ public class LeetCode150_1
         int[] ans = new int[] { 1, 2 };
         Assert.IsTrue(res.SequenceEqual(ans));
     }
+
+    [TestMethod]
+    public void ThreeSum2IITest()
+    {
+        // int[] nums = { -1, 0, 1, 2, -1, -4 };
+        int[] nums = { 0,0,0};
+        IList<IList<int>> res = ThreeSum2.Sum(nums);
+        IList<IList<int>> ans = new List<IList<int>>();
+        ans.Add(new List<int>() { -1, -1, 2 });
+        ans.Add(new List<int>() { -1, 0, 1 });
+        Assert.IsTrue(res.Count == 2);
+        for (int i = 0; i < res.Count; i++)
+        {
+            Assert.AreEqual(res[i].Count, ans[i].Count, $"Inner list count mismatch at index {i}");
+
+            for (int j = 0; j < res[i].Count; j++)
+            {
+                Assert.AreEqual(res[i][j], ans[i][j], $"Mismatch at index {i},{j}");
+            }
+        }
+    }
 }
