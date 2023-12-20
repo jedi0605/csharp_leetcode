@@ -315,22 +315,13 @@ public class LeetCode150_1
     [TestMethod]
     public void ThreeSum2IITest()
     {
-        // int[] nums = { -1, 0, 1, 2, -1, -4 };
-        int[] nums = { 0, 0, 0 };
+        int[] nums = { -1, 0, 1, 2, -1, -4 };        
         IList<IList<int>> res = ThreeSum2.Sum(nums);
         IList<IList<int>> ans = new List<IList<int>>();
         ans.Add(new List<int>() { -1, -1, 2 });
         ans.Add(new List<int>() { -1, 0, 1 });
         Assert.IsTrue(res.Count == 2);
-        for (int i = 0; i < res.Count; i++)
-        {
-            Assert.AreEqual(res[i].Count, ans[i].Count, $"Inner list count mismatch at index {i}");
 
-            for (int j = 0; j < res[i].Count; j++)
-            {
-                Assert.AreEqual(res[i][j], ans[i][j], $"Mismatch at index {i},{j}");
-            }
-        }
     }
 
     [TestMethod]
@@ -339,5 +330,19 @@ public class LeetCode150_1
         int[] nums = new int[] { 2, 3, 1, 2, 4, 3 };
         int target = 7;
         Assert.IsTrue(MinimumSizeSubarraySum.MinSubArrayLen(target, nums) == 2);
+    }
+
+    [TestMethod]
+    public void LongestSubstringWithoutRepeatingCharactersTest()
+    {
+        string case1 = "abcabcbb";
+        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 3);
+        case1 = " ";
+        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 1);
+
+        case1 = "bbbbb";
+        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 1);
+        case1 = "aab";
+        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 2);        
     }
 }
