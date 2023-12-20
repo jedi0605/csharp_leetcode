@@ -315,7 +315,7 @@ public class LeetCode150_1
     [TestMethod]
     public void ThreeSum2IITest()
     {
-        int[] nums = { -1, 0, 1, 2, -1, -4 };        
+        int[] nums = { -1, 0, 1, 2, -1, -4 };
         IList<IList<int>> res = ThreeSum2.Sum(nums);
         IList<IList<int>> ans = new List<IList<int>>();
         ans.Add(new List<int>() { -1, -1, 2 });
@@ -343,6 +343,19 @@ public class LeetCode150_1
         case1 = "bbbbb";
         Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 1);
         case1 = "aab";
-        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 2);        
+        Assert.IsTrue(LongestSubstringWithoutRepeatingCharacters2.LengthOfLongestSubstringSlidingWindow2(case1) == 2);
+    }
+
+    [TestMethod]
+    public void SubstringWithConcatenationOfAllWordsTest()
+    {
+        string s = "barfoothefoobarman";
+        string[] words = new string[] { "foo", "bar" };
+        var res = SubstringWithConcatenationOfAllWords.FindSubstring(s, words);
+        List<int> ans = new List<int>() { 0, 9 };
+        for (int i = 0; i < res.Count; i++)
+        {
+            Assert.IsTrue(res[i] == ans[i]);
+        }
     }
 }
