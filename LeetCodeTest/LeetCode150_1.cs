@@ -358,4 +358,13 @@ public class LeetCode150_1
             Assert.IsTrue(res[i] == ans[i]);
         }
     }
+
+    [TestMethod]
+    public void MinimumWindowSubstringTest()
+    {
+        string s = "ADOBECODEBANC";
+        string t = "ABC";
+        var res = MinimumWindowSubstring.MinWindow(s, t);
+        Assert.IsTrue(res == "BANC");
+    }
 }
