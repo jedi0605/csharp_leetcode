@@ -385,4 +385,21 @@ public class LeetCode150_1
         bool res = ValidSudoku2.IsValidSudoku(board);
         Assert.IsFalse(res);
     }
+
+    [TestMethod]
+    public void SpiralMatrix2Test()
+    {
+        int[][] input = new int[][] { new int[] { 1, 2, 3, 4 }, new int[] { 5, 6, 7, 8 }, new int[] { 9, 10, 11, 12 } };
+        IList<int> res = SpiralMatrix2.SpiralOrder(input);
+        List<int> ans = new List<int>() { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 };
+        Assert.IsTrue(res.SequenceEqual(ans));
+    }
+     [TestMethod]
+    public void SpiralMatrix2ITest()
+    {
+        int[][] input = new int[][] { new int[] { 1}, new int[]{2}, new int[]{3},new int[]{4}};
+        IList<int> res = SpiralMatrix2.SpiralOrder(input);
+        List<int> ans = new List<int>() { 1, 2, 3, 4 };
+        Assert.IsTrue(res.SequenceEqual(ans));
+    }
 }
