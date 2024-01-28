@@ -394,12 +394,53 @@ public class LeetCode150_1
         List<int> ans = new List<int>() { 1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7 };
         Assert.IsTrue(res.SequenceEqual(ans));
     }
-     [TestMethod]
+    [TestMethod]
     public void SpiralMatrix2ITest()
     {
-        int[][] input = new int[][] { new int[] { 1}, new int[]{2}, new int[]{3},new int[]{4}};
+        int[][] input = new int[][] { new int[] { 1 }, new int[] { 2 }, new int[] { 3 }, new int[] { 4 } };
         IList<int> res = SpiralMatrix2.SpiralOrder(input);
         List<int> ans = new List<int>() { 1, 2, 3, 4 };
         Assert.IsTrue(res.SequenceEqual(ans));
+    }
+
+    [TestMethod]
+    public void RotateImageITest()
+    {
+        int[][] input = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } };
+
+        int[][] ans = new int[][] { new int[] { 7, 4, 1 }, new int[] { 8, 5, 2 }, new int[] { 9, 6, 3 } };
+
+        RotateImage.Rotate(input);
+        Assert.IsTrue(AreJaggedArraysEqual(input, ans));
+    }
+
+
+
+
+    // Untility for check two int[][] are equal.
+    public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
+    {
+        if (array1.Length != array2.Length)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < array1.Length; i++)
+        {
+            if (array1[i].Length != array2[i].Length)
+            {
+                return false;
+            }
+
+            for (int j = 0; j < array1[i].Length; j++)
+            {
+                if (array1[i][j] != array2[i][j])
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
