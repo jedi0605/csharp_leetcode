@@ -407,15 +407,32 @@ public class LeetCode150_1
     public void RotateImageITest()
     {
         int[][] input = new int[][] { new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }, new int[] { 7, 8, 9 } };
-
         int[][] ans = new int[][] { new int[] { 7, 4, 1 }, new int[] { 8, 5, 2 }, new int[] { 9, 6, 3 } };
-
         RotateImage.Rotate(input);
         Assert.IsTrue(AreJaggedArraysEqual(input, ans));
     }
 
+    [TestMethod]
+    public void SetMatrixZerosTest()
+    {
+        int[][] input = new int[][] { new int[] { 1, 1, 1 }, new int[] { 1, 0, 1 }, new int[] { 1, 1, 1 } };
 
+        int[][] ans = new int[][] { new int[] { 1, 0, 1 }, new int[] { 0, 0, 0 }, new int[] { 1, 0, 1 } };
+        // SetMatrixZeros.SetZeroes(input);
+        SetMatrixZeros.SetMatrixZeros2(input);
+        Assert.IsTrue(AreJaggedArraysEqual(input, ans));
+    }
 
+    [TestMethod]
+    public void SetMatrixZerosTest2()
+    {
+        int[][] input = new int[][] { new int[] { 0, 1, 2, 0 }, new int[] { 3, 4, 5, 2 }, new int[] { 1, 3, 1, 5 } };
+
+        int[][] ans = new int[][] { new int[] { 0, 0, 0, 0 }, new int[] { 0, 4, 5, 0 }, new int[] { 0, 3, 1, 0 } };
+        // SetMatrixZeros.SetZeroes(input);
+        SetMatrixZeros.SetMatrixZeros2(input);
+        Assert.IsTrue(AreJaggedArraysEqual(input, ans));
+    }
 
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
