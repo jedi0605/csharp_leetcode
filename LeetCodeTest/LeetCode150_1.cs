@@ -445,6 +445,20 @@ public class LeetCode150_1
         Assert.IsTrue(AreJaggedArraysEqual(input, ans));
     }
 
+    [TestMethod]
+    public void IsIsomorphicTest()
+    {
+        string s = "egg"; string t = "add";
+        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == true);        
+    }
+
+    [TestMethod]
+    public void IsIsomorphicTest2()
+    {
+        string s = "foo"; string t = "bar";
+        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == false);        
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
