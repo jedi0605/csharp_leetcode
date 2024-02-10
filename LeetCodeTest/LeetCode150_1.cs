@@ -449,14 +449,46 @@ public class LeetCode150_1
     public void IsIsomorphicTest()
     {
         string s = "egg"; string t = "add";
-        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == true);        
+        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == true);
     }
 
     [TestMethod]
     public void IsIsomorphicTest2()
     {
         string s = "foo"; string t = "bar";
-        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == false);        
+        Assert.IsTrue(IsIsomorphic.Is_Isomorphic(s, t) == false);
+    }
+
+    [TestMethod]
+    public void WordPatternTest()
+    {
+        string s = "abba"; string t = "dog cat cat dog";
+        Assert.IsTrue(WordPattern.IsWordPattern(s, t) == true);
+    }
+
+    [TestMethod]
+    public void WordPatternTest2()
+    {
+        string s = "abba"; string t = "dog cat cat fish";
+        Assert.IsTrue(WordPattern.IsWordPattern(s, t) == false);
+    }
+
+    [TestMethod]
+    public void WordPatternTest3()
+    {
+        string s = "abba"; string t = "dog dog dog dog";
+        Assert.IsTrue(WordPattern.IsWordPattern(s, t) == false);
+    }
+
+
+    [TestMethod]
+    public void GroupAnagramsTest()
+    {
+        string[] strs = new string[] { "eat", "tea", "tan", "ate", "nat", "bat" };
+        var res = GroupAnagrams.Group_Anagrams(strs);
+        IList<IList<string>> ans = new List<IList<string>>(){ new List<string>(){"eat","tea","ate"},
+            new List<string>(){"tan","nat"}, new List<string>(){"bat"}};
+        Assert.IsTrue(AreListsEqual(res, ans));
     }
 
     // Untility for check two int[][] are equal.
@@ -481,6 +513,22 @@ public class LeetCode150_1
                     return false;
                 }
             }
+        }
+        return true;
+    }
+
+    static bool AreListsEqual(IList<IList<string>> list1, IList<IList<string>> list2)
+    {
+        if (list1.Count != list2.Count)
+            return false;
+
+        for (int i = 0; i < list1.Count; i++)
+        {
+            IList<string> innerList1 = list1[i];
+            IList<string> innerList2 = list2[i];
+
+            if (innerList1.Count != innerList2.Count || !innerList1.SequenceEqual(innerList2))
+                return false;
         }
 
         return true;
