@@ -8,6 +8,11 @@ namespace LeetCodeLib
 {
     public class GroupAnagrams
     {
+        /// <summary>
+        /// Using counter to make Key in maps.
+        /// </summary>
+        /// <param name="strs"></param>
+        /// <returns></returns>
         public static IList<IList<string>> Group_Anagrams(string[] strs)
         {
             List<IList<string>> res = new List<IList<string>>();

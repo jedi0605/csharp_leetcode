@@ -491,6 +491,14 @@ public class LeetCode150_1
         Assert.IsTrue(AreListsEqual(res, ans));
     }
 
+    [TestMethod]
+    public void HappyNumberTest()
+    {
+        int n = 19;
+        HappyNumber happyNumber = new HappyNumber();
+        Assert.IsTrue(happyNumber.IsHappy(n));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
