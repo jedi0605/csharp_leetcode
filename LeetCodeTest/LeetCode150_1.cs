@@ -499,6 +499,23 @@ public class LeetCode150_1
         Assert.IsTrue(happyNumber.IsHappy(n));
     }
 
+    [TestMethod]
+    public void ContainsDuplicateIITest()
+    {
+        int[] nums = new int[] { 1, 2, 3, 1 };
+        int k = 3;
+        ContainsDuplicateII duplicateII = new ContainsDuplicateII();
+        Assert.IsTrue(duplicateII.ContainsNearbyDuplicate(nums, k));
+
+        nums = new int[] { 1, 0, 1, 1 };
+        k = 1;
+        Assert.IsTrue(duplicateII.ContainsNearbyDuplicate(nums, k));
+
+        nums = new int[] { 1, 2, 3, 1, 2, 3 };
+        k = 2;
+        Assert.IsTrue(duplicateII.ContainsNearbyDuplicate(nums, k) == false);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
