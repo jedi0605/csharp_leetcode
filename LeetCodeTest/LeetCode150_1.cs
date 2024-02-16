@@ -516,6 +516,13 @@ public class LeetCode150_1
         Assert.IsTrue(duplicateII.ContainsNearbyDuplicate(nums, k) == false);
     }
 
+    [TestMethod]
+    public void LongestConsecutiveSequenceTest()
+    {
+        int[] nums = new int[] { 100, 4, 200, 1, 3, 2 };
+        Assert.IsTrue(LongestConsecutiveSequence.LongestConsecutive(nums) == 4);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
