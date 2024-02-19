@@ -533,6 +533,19 @@ public class LeetCode150_1
         Assert.IsTrue(ans.SequenceEqual(list));
     }
 
+    [TestMethod]
+    public void MergeIntervals2Test()
+    {
+        int[][] nums =
+          {
+                new int[]{1,4},
+                new int[]{4,5}
+                 };
+        int[][] res = MergeIntervals2.Merge(nums);
+        int[][] ans = new int[][] { new int[] { 1, 5 } };
+        Assert.IsTrue(res.SequenceEqual(ans));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
