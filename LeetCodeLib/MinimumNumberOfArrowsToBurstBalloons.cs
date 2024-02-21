@@ -14,13 +14,6 @@ namespace LeetCodeLib
         /// #Sort
         /// O(nlogn)
         /// O(n)
-        /// </summary>
-        /// <param name="points"></param>
-        /// <returns></returns> <summary>
-        /// 
-        /// </summary>
-        /// <param name="points"></param>
-        /// <returns></returns>
         public static int FindMinArrowShots(int[][] points)
         {
             if (points.Length == 0) return 0;

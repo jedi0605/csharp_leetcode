@@ -559,10 +559,17 @@ public class LeetCode150_1
     [TestMethod]
     public void MinimumNumberOfArrowsToBurstBalloonsTest()
     {
-        
-        int[][] input = { new int[] { 10, 16 }, new int[] { 2, 8 }, new int[] { 1, 6 }, new int[] { 7, 12 } };        
-        int ans = MinimumNumberOfArrowsToBurstBalloons.FindMinArrowShots(input);        
-        Assert.IsTrue(ans ==2 );
+
+        int[][] input = { new int[] { 10, 16 }, new int[] { 2, 8 }, new int[] { 1, 6 }, new int[] { 7, 12 } };
+        int ans = MinimumNumberOfArrowsToBurstBalloons.FindMinArrowShots(input);
+        Assert.IsTrue(ans == 2);
+    }
+
+    [TestMethod]
+    public void ValidParenthesesTest()
+    {
+        Assert.IsTrue(ValidParentheses2.IsValid("()[]{}"));
+        Assert.IsFalse(ValidParentheses2.IsValid("()[]{]"));
     }
 
     // Untility for check two int[][] are equal.
