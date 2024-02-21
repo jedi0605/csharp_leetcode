@@ -556,6 +556,15 @@ public class LeetCode150_1
         Assert.IsTrue(AreJaggedArraysEqual(ans, assert));
     }
 
+    [TestMethod]
+    public void MinimumNumberOfArrowsToBurstBalloonsTest()
+    {
+        
+        int[][] input = { new int[] { 10, 16 }, new int[] { 2, 8 }, new int[] { 1, 6 }, new int[] { 7, 12 } };        
+        int ans = MinimumNumberOfArrowsToBurstBalloons.FindMinArrowShots(input);        
+        Assert.IsTrue(ans ==2 );
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
