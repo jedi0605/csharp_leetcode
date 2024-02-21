@@ -546,6 +546,16 @@ public class LeetCode150_1
         Assert.IsTrue(res.SequenceEqual(ans));
     }
 
+    [TestMethod]
+    public void InsertInterval2Test()
+    {
+        int[][] input = { new int[] { 1, 2 }, new int[] { 3, 5 }, new int[] { 6, 7 }, new int[] { 8, 10 }, new int[] { 12, 16 } };
+        int[] newArray = { 4, 8 };
+        int[][] ans = InsertInterval2.Insert(input, newArray);
+        int[][] assert = { new int[] { 1, 2 }, new int[] { 3, 10 }, new int[] { 12, 16 } };
+        Assert.IsTrue(AreJaggedArraysEqual(ans, assert));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
