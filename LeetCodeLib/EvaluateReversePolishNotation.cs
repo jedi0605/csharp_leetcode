@@ -18,7 +18,7 @@ namespace LeetCodeLib
                     int v1 = nums.Pop();
                     int v2 = nums.Pop();
 
-                    int tmp = _Operation(v2, item, v1);
+                    int tmp = Operation(v2, item, v1);
                     nums.Push(tmp);
 
                 }
@@ -30,7 +30,7 @@ namespace LeetCodeLib
             return nums.Pop();
         }
 
-        private static int _Operation(int v1, string item, int v2)
+        private static int Operation(int v1, string item, int v2)
         {
             if (item == "+")
                 return v1 + v2;

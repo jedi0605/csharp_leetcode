@@ -589,6 +589,15 @@ public class LeetCode150_1
 
     }
 
+    [TestMethod]
+    public void EvaluateReversePolishNotation2Test()
+    {
+        string[] toke = { "2", "1", "+", "3", "*" };
+        Assert.IsTrue(EvaluateReversePolishNotation2.EvalRPN(toke) == 9);
+        string[] toke2 = { "4", "13", "5", "/", "+" };
+        Assert.IsTrue(EvaluateReversePolishNotation2.EvalRPN(toke2) == 6);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
