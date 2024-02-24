@@ -586,7 +586,6 @@ public class LeetCode150_1
         path = "/home//foo/";
         res = SimplifyPath.Simplify_Path(path);
         Assert.IsTrue(res == "/home/foo");
-
     }
 
     [TestMethod]
@@ -596,6 +595,13 @@ public class LeetCode150_1
         Assert.IsTrue(EvaluateReversePolishNotation2.EvalRPN(toke) == 9);
         string[] toke2 = { "4", "13", "5", "/", "+" };
         Assert.IsTrue(EvaluateReversePolishNotation2.EvalRPN(toke2) == 6);
+    }
+
+    [TestMethod]
+    public void BasicCalculatorTest()
+    {
+        string s = "2147483647";
+        Assert.IsTrue(BasicCalculator.Calculate(s) == 2147483647);
     }
 
     // Untility for check two int[][] are equal.
