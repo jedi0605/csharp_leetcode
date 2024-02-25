@@ -617,6 +617,20 @@ public class LeetCode150_1
         Assert.IsTrue(ans.Equals(res));
     }
 
+    [TestMethod]
+    public void MergeTwoSortedListsTest()
+    {
+        int[] l1 = { 1, 2, 4 };
+        int[] l2 = { 1, 3, 4 };
+        ListNode list1 = ListNode.ArrayToListNode(l1);
+        ListNode list2 = ListNode.ArrayToListNode(l2);
+        var res = MergeTwoSortedLists2.MergeTwoLists(list1, list2);
+        int[] a = { 1, 1, 2, 3, 4, 4 };
+        ListNode ans = ListNode.ArrayToListNode(a);
+        Assert.IsTrue(ans.Equals(res));
+    }
+
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
