@@ -604,6 +604,19 @@ public class LeetCode150_1
         Assert.IsTrue(BasicCalculator.Calculate(s) == 2147483647);
     }
 
+    [TestMethod]
+    public void AddTwoNumbersTest()
+    {
+        int[] l1 = { 2, 4, 3 };
+        int[] l2 = { 5, 6, 4 };
+        ListNode list1 = ListNode.ArrayToListNode(l1);
+        ListNode list2 = ListNode.ArrayToListNode(l2);
+        var res = AddTwoNumber.AddTwoNumbers(list1, list2);
+        int[] a = { 7, 0, 8 };
+        ListNode ans = ListNode.ArrayToListNode(a);
+        Assert.IsTrue(ans.Equals(res));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {

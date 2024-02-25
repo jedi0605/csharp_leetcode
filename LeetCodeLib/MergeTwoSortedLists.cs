@@ -53,6 +53,22 @@ namespace LeetCodeLib
             }
             return objHead == null && current == null ? true : false;
         }
+
+        public static ListNode ArrayToListNode(int[] arr)
+        {
+            if (arr == null || arr.Length == 0)
+                return null;
+
+            ListNode head = new ListNode(arr[0]);
+            ListNode current = head;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                current.next = new ListNode(arr[i]);
+                current = current.next;
+            }
+            return head;
+        }
     }
 
     public static class MergeTwoSortedLists
