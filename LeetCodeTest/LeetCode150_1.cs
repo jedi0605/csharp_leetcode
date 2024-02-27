@@ -643,6 +643,18 @@ public class LeetCode150_1
         Assert.IsTrue(ans.Equals(res));
     }
 
+    [TestMethod]
+    public void ReverseNodesinkGroupTest()
+    {
+        int[] l1 = { 1, 2, 3, 4, 5 };
+
+        ListNode list1 = ListNode.ArrayToListNode(l1);
+        var res = ReverseNodesInKGroup.ReverseKGroup(list1, 2);
+        int[] a = { 2, 1, 4, 3, 5 };
+        ListNode ans = ListNode.ArrayToListNode(a);
+        Assert.IsTrue(ans.Equals(res));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
