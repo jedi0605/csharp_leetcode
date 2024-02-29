@@ -667,6 +667,18 @@ public class LeetCode150_1
         Assert.IsTrue(ans.Equals(res));
     }
 
+    [TestMethod]
+    public void RotateListTest()
+    {
+        int[] l1 = { 1, 2, 3, 4, 5 };
+        ListNode list1 = ListNode.ArrayToListNode(l1);
+        int k = 2;
+        var res = RotateList.RotateRight(list1, k);
+        int[] a = { 4, 5, 1, 2, 3 };
+        ListNode ans = ListNode.ArrayToListNode(a);
+        Assert.IsTrue(ans.Equals(res));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
