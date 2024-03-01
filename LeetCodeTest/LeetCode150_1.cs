@@ -679,6 +679,18 @@ public class LeetCode150_1
         Assert.IsTrue(ans.Equals(res));
     }
 
+    [TestMethod]
+    public void PartitionbListTest()
+    {
+        int[] l1 = { 1, 4, 3, 2, 5, 2 };
+        ListNode list1 = ListNode.ArrayToListNode(l1);
+        int k = 3;
+        var res = PartitionList.Partition(list1, k);
+        int[] a = { 1, 2, 2, 4, 3, 5 };
+        ListNode ans = ListNode.ArrayToListNode(a);
+        Assert.IsTrue(ans.Equals(res));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
