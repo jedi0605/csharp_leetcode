@@ -12,8 +12,12 @@ namespace LeetCodeLib
     /// in the end Ltail.next = R.next. Rtail.next = null
     /// x=3
     /// H   1   4   3   2   5   2
-    /// L
-    /// R
+    /// L   1   2   2
+    ///             |
+    /// |-----------|
+    /// |
+    /// R   4   3   5 -> null
+    /// 
     /// #Leetcode 150
     /// #Stack
     /// O(n)

@@ -691,6 +691,25 @@ public class LeetCode150_1
         Assert.IsTrue(ans.Equals(res));
     }
 
+    [TestMethod]
+    public void LRUCacheTesst()
+    {
+        LRUCache2 cache = new LRUCache2(2);
+        cache.Put(1, 1);
+        cache.PrintList();
+        cache.Put(2, 2);
+        cache.PrintList();
+        Assert.IsTrue(cache.Get(1) == 1);
+        cache.Put(3, 3);
+        cache.PrintList();
+
+        Assert.IsTrue(cache.Get(2) == -1);
+        cache.Put(4, 4);
+        Assert.IsTrue(cache.Get(1) == -1);
+        Assert.IsTrue(cache.Get(3) == 3);
+        Assert.IsTrue(cache.Get(4) == 4);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
