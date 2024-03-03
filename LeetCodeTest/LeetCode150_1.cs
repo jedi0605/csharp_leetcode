@@ -719,6 +719,14 @@ public class LeetCode150_1
         Assert.IsTrue(TreeNode.CompareTrees(root, res));
     }
 
+    [TestMethod]
+    public void IsSymmetricTest()
+    {
+        int?[] array = { 1, 2, 2, 3, 4, 4, 3 };
+        BinaryTree t = new BinaryTree(array);
+        Assert.IsTrue(SymmetricTree2.IsSymmetric(t.root));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
