@@ -710,6 +710,15 @@ public class LeetCode150_1
         Assert.IsTrue(cache.Get(4) == 4);
     }
 
+    [TestMethod]
+    public void InvertTreeTesst()
+    {
+        int[] rootArr = { 4, 2, 7, 1, 3, 6, 9 };
+        TreeNode root = TreeNode.ArrToTree(rootArr);
+        TreeNode res = InvertBinaryTree2.InvertTree(root);
+        Assert.IsTrue(TreeNode.CompareTrees(root, res));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {

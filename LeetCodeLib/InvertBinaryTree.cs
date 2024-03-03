@@ -17,6 +17,39 @@ namespace LeetCodeLib
             this.right = right;
         }
 
+        public static TreeNode ArrToTree(int[]? arr, int index = 0)
+        {
+            if (index < arr.Length)
+            {
+                if (arr[index] == null)
+                    return null;
+                TreeNode treeNode = new TreeNode(arr[index]);
+                treeNode.left = ArrToTree(arr, index * 2 + 1);
+                treeNode.right = ArrToTree(arr, index * 2 + 2);
+                return treeNode;
+            }
+            return null;
+        }
+
+        public static bool CompareTrees(TreeNode tree1, TreeNode tree2)
+        {
+            if (tree1 == null && tree2 == null)
+                return true;
+
+            if (tree1 == null || tree2 == null)
+                return false;
+
+            if (tree1.val != tree2.val)
+                return false;
+
+            if (CompareTrees(tree1.left, tree2.left) == false)
+                return false;
+
+            if (CompareTrees(tree1.right, tree2.right) == false)
+                return false;
+
+            return true;
+        }
     }
 
 
@@ -27,16 +60,6 @@ namespace LeetCodeLib
     {
         public static TreeNode InvertTree(TreeNode root)
         {
-            // if (root.left != null && root.right != null)
-            // {
-            //     TreeNode tmp = root.left;
-            //     root.left = root.right;
-            //     root.right = tmp;
-
-            //     InvertTree(root.left);
-            //     InvertTree(root.right);
-            // }
-            // return root;
 
 
             if (root == null)
