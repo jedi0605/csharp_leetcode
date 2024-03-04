@@ -17,7 +17,7 @@ namespace LeetCodeLib
             this.right = right;
         }
 
-        public static TreeNode ArrToTree(int[]? arr, int index = 0)
+        public static TreeNode ArrToTree(int?[] arr, int index = 0)
         {
             if (index < arr.Length)
             {

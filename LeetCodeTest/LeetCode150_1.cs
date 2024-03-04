@@ -713,7 +713,7 @@ public class LeetCode150_1
     [TestMethod]
     public void InvertTreeTesst()
     {
-        int[] rootArr = { 4, 2, 7, 1, 3, 6, 9 };
+        int?[] rootArr = { 4, 2, 7, 1, 3, 6, 9 };
         TreeNode root = TreeNode.ArrToTree(rootArr);
         TreeNode res = InvertBinaryTree2.InvertTree(root);
         Assert.IsTrue(TreeNode.CompareTrees(root, res));
@@ -725,6 +725,28 @@ public class LeetCode150_1
         int?[] array = { 1, 2, 2, 3, 4, 4, 3 };
         BinaryTree t = new BinaryTree(array);
         Assert.IsTrue(SymmetricTree2.IsSymmetric(t.root));
+    }
+
+    [TestMethod]
+    public void ConstructBinaryTreeFromPreorderAndInorderTraversal2Test()
+    {
+
+        int[] preOrder = new int[] { 3, 9, 20, 15, 7 };
+        int[] inOrder = new int[] { 9, 3, 15, 20, 7 };
+        var root = ConstructBinaryTreeFromPreorderAndInorderTraversal2.BuildTree(preOrder, inOrder);
+    }
+
+
+    [TestMethod]
+    public void ConstructBinaryTreefromInorderandPostorderTraversalTest()
+    {
+        int[] inOrder = new int[] { 9, 3, 15, 20, 7 };
+        int[] preOrder = new int[] { 9, 15, 7, 20, 3 };
+        var root = ConstructBinaryTreefromInorderandPostorderTraversal.BuildTree(inOrder, preOrder);
+
+        int?[] rootArr = { 3, 9, 20, null, null, 15, 7 };
+        TreeNode ans = TreeNode.ArrToTree(rootArr);
+        Assert.IsTrue(TreeNode.CompareTrees(root, ans));
     }
 
     // Untility for check two int[][] are equal.
