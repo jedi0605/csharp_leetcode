@@ -749,6 +749,14 @@ public class LeetCode150_1
         Assert.IsTrue(TreeNode.CompareTrees(root, ans));
     }
 
+    [TestMethod]
+    public void PopulatingNextRightPointersinEachNodeIITest()
+    {
+        int?[] inOrder = new int?[] { 1, 2, 3, 4, 5, null, 7 };
+        var root = NodeNext.ArrToTree(inOrder);
+        var res = PopulatingNextRightPointersinEachNodeII.Connect(root);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
