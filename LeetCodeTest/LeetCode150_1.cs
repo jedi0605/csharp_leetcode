@@ -757,6 +757,14 @@ public class LeetCode150_1
         var res = PopulatingNextRightPointersinEachNodeII.Connect(root);
     }
 
+    [TestMethod]
+    public void FlattenBinaryTreetoLinkedListTest()
+    {
+        int?[] inOrder = new int?[] { 1, 2, 5, 3, 4, null, 6 };
+        var root = TreeNode.ArrToTree(inOrder);
+        FlattenBinaryTreetoLinkedList.Flatten(root);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
