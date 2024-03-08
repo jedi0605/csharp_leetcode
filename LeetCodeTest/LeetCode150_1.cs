@@ -778,9 +778,18 @@ public class LeetCode150_1
     [TestMethod]
     public void SumRootToLeafNumbersTest()
     {
-        int?[] arr = new int?[] { 1,2,3};
-        var root = TreeNode.ArrToTree(arr);                
+        int?[] arr = new int?[] { 1, 2, 3 };
+        var root = TreeNode.ArrToTree(arr);
         Assert.IsTrue(SumRoottoLeafNumbers.SumNumbers(root) == 25);
+    }
+
+    [TestMethod]
+    public void BinaryTreeMaximumPathSumTest()
+    {
+        int?[] arr = new int?[] { 1, 2, 3 };
+        var root = TreeNode.ArrToTree(arr);
+        BinaryTreeMaximumPathSum sol = new BinaryTreeMaximumPathSum();
+        Assert.IsTrue(sol.MaxPathSum(root) == 6);
     }
 
     // Untility for check two int[][] are equal.
