@@ -765,6 +765,16 @@ public class LeetCode150_1
         FlattenBinaryTreetoLinkedList.Flatten(root);
     }
 
+    [TestMethod]
+    public void PathSumTest()
+    {
+        int?[] arr = new int?[] { 5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1 };
+        var root = TreeNode.ArrToTree(arr);
+        var test  = new BinaryTree(arr);
+        int target = 22;
+        Assert.IsTrue(PathSum.HasPathSum(root, 22));
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
