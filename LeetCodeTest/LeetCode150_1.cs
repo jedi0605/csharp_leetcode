@@ -792,6 +792,16 @@ public class LeetCode150_1
         Assert.IsTrue(sol.MaxPathSum(root) == 6);
     }
 
+    [TestMethod]
+    public void CountCompleteTreeNodesTest()
+    {
+        int?[] arr = new int?[] { 1, 2, 3, 4, 5, 6 };
+        var root = TreeNode.ArrToTree(arr);
+        CountCompleteTreeNodes count = new CountCompleteTreeNodes();
+        int res = count.CountNodes(root);
+        Assert.IsTrue(res == 6);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
