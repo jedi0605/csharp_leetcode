@@ -802,6 +802,17 @@ public class LeetCode150_1
         Assert.IsTrue(res == 6);
     }
 
+    [TestMethod]
+    public void LowestCommonAncestorofaBinaryTree2()
+    {
+        int?[] arr = new int?[] { 3, 5, 1, 6, 2, 0, 8, null, null, 7, 4 };
+        var root = TreeNode.ArrToTree(arr);
+        LowestCommonAncestorofaBinaryTree2 sol = new LowestCommonAncestorofaBinaryTree2();
+        var res = sol.LowestCommonAncestor(root, new TreeNode(5), new TreeNode(1));
+                
+        Assert.IsTrue(res.val.Value == 3);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
