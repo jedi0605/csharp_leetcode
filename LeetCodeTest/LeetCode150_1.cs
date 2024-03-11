@@ -809,8 +809,18 @@ public class LeetCode150_1
         var root = TreeNode.ArrToTree(arr);
         LowestCommonAncestorofaBinaryTree2 sol = new LowestCommonAncestorofaBinaryTree2();
         var res = sol.LowestCommonAncestor(root, new TreeNode(5), new TreeNode(1));
-                
+
         Assert.IsTrue(res.val.Value == 3);
+    }
+
+    [TestMethod]
+    public void AverageofLevelsinBinaryTreeTest()
+    {
+        int?[] arr = new int?[] { 3, 9, 20, null, null, 15, 7 };
+        var root = TreeNode.ArrToTree(arr);
+        var res = AverageofLevelsinBinaryTree.AverageOfLevels(root);
+        List<double> ans = new List<double>() { 3, 14.5, 11 };
+        Assert.IsTrue(ans.SequenceEqual(res));
     }
 
     // Untility for check two int[][] are equal.
