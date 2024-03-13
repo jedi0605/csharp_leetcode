@@ -823,6 +823,31 @@ public class LeetCode150_1
         Assert.IsTrue(ans.SequenceEqual(res));
     }
 
+    [TestMethod]
+    public void BinaryTreeZigzagLevelOrderTraversalTreeTest()
+    {
+        int?[] arr = new int?[] { 3, 9, 20, null, null, 15, 7 };
+        var root = TreeNode.ArrToTree(arr);
+        BinaryTreeZigzagLevelOrderTraversal sol = new BinaryTreeZigzagLevelOrderTraversal();
+        var res = sol.ZigzagLevelOrder(root);
+        List<IList<int>> ans = new List<IList<int>>();
+        ans.Add(new List<int> { 3 });
+        ans.Add(new List<int> { 20, 9 });
+        ans.Add(new List<int> { 15, 7 });
+        Assert.IsTrue(AreListsEqual(res, ans));
+    }
+
+
+    [TestMethod]
+    public void MinimumAbsoluteDifferenceinBSTTest()
+    {
+        int?[] arr = new int?[] { 4, 2, 6, 1, 3 };
+        var root = TreeNode.ArrToTree(arr);
+        MinimumAbsoluteDifferenceinBST minimum = new MinimumAbsoluteDifferenceinBST();
+        var res = minimum.GetMinimumDifference(root);
+        Assert.IsTrue(res == 1);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
@@ -849,15 +874,15 @@ public class LeetCode150_1
         return true;
     }
 
-    static bool AreListsEqual(IList<IList<string>> list1, IList<IList<string>> list2)
+    static bool AreListsEqual<T>(IList<IList<T>> list1, IList<IList<T>> list2)
     {
         if (list1.Count != list2.Count)
             return false;
 
         for (int i = 0; i < list1.Count; i++)
         {
-            IList<string> innerList1 = list1[i];
-            IList<string> innerList2 = list2[i];
+            IList<T> innerList1 = list1[i];
+            IList<T> innerList2 = list2[i];
 
             if (innerList1.Count != innerList2.Count || !innerList1.SequenceEqual(innerList2))
                 return false;
