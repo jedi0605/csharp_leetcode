@@ -837,7 +837,6 @@ public class LeetCode150_1
         Assert.IsTrue(AreListsEqual(res, ans));
     }
 
-
     [TestMethod]
     public void MinimumAbsoluteDifferenceinBSTTest()
     {
@@ -846,6 +845,15 @@ public class LeetCode150_1
         MinimumAbsoluteDifferenceinBST minimum = new MinimumAbsoluteDifferenceinBST();
         var res = minimum.GetMinimumDifference(root);
         Assert.IsTrue(res == 1);
+    }
+
+    [TestMethod]
+    public void KthSmallestElementinaBSTTest()
+    {
+        int?[] arr = new int?[] { 5, 3, 6, 2, 4, null, null, 1 };
+        var root = TreeNode.ArrToTree(arr);
+        KthSmallestElementinaBST kth = new KthSmallestElementinaBST();
+        Assert.IsTrue(kth.KthSmallest(root, 3) == 3);        
     }
 
     // Untility for check two int[][] are equal.

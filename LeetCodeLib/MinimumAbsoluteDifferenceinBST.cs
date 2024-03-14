@@ -11,7 +11,8 @@ namespace LeetCodeLib
     /// <summary>
     /// LeetCode 530. Minimum Absolute Difference in BST
     /// In BST tree. using inorder trevals will getting ordering array.
-    /// Add Stack, And recurce ver.
+    /// 1. stack
+    /// 2. recurce
     /// </summary>
 
     public class MinimumAbsoluteDifferenceinBST
