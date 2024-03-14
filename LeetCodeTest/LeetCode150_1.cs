@@ -853,7 +853,16 @@ public class LeetCode150_1
         int?[] arr = new int?[] { 5, 3, 6, 2, 4, null, null, 1 };
         var root = TreeNode.ArrToTree(arr);
         KthSmallestElementinaBST kth = new KthSmallestElementinaBST();
-        Assert.IsTrue(kth.KthSmallest(root, 3) == 3);        
+        Assert.IsTrue(kth.KthSmallest(root, 3) == 3);
+    }
+
+    [TestMethod]
+    public void ValidateBinarySearchTree2Test()
+    {
+        int?[] arr = new int?[] { 2, 2 };
+        var root = TreeNode.ArrToTree(arr);
+        bool res = ValidateBinarySearchTree2.IsValidBST(root);
+        Assert.IsTrue(res == false);
     }
 
     // Untility for check two int[][] are equal.
