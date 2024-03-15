@@ -865,6 +865,19 @@ public class LeetCode150_1
         Assert.IsTrue(res == false);
     }
 
+    [TestMethod]
+    public void NumberOfIslandsBFSTest()
+    {
+        char[][] input = {
+                new char[] { '1','1','1','1','0'},
+                new char[] { '1','1','0','1','0' },
+                new char[] { '1','1','0','0','0' },
+                new char[] { '0','0','0','0','0' }};
+        NumberOfIslands2 sol = new NumberOfIslands2();
+        int res = sol.NumIslands(input);
+        Assert.IsTrue(res == 1);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
     {
