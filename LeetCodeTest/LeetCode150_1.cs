@@ -929,6 +929,18 @@ public class LeetCode150_1
         // Assert.AreEqual(res, ans);
     }
 
+    [TestMethod]
+    public void CourseSchedule2Test()
+    {
+        //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+
+        int numCourses = 5;
+        int[][] prerequisites = { new int[] { 2, 0 }, new int[] { 2, 1 }, new int[] { 4, 2 }, new int[] { 4, 3 } };
+        CourseSchedule2 cs = new CourseSchedule2();
+        bool res = cs.CanFinish(numCourses, prerequisites);
+        // Assert.AreEqual(res, ans);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
