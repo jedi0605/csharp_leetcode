@@ -898,6 +898,37 @@ public class LeetCode150_1
         Assert.IsTrue(AreJaggedArraysEqual(input, anss));
     }
 
+    [TestMethod]
+    public void EvaluateDivision()
+    {
+        //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+
+        IList<IList<string>> equations = new List<IList<string>>();
+        equations.Add(new List<string>() { "a", "b" });
+        equations.Add(new List<string>() { "b", "c" });
+        double[] values = new double[] { 2.0, 3.0 };
+
+        IList<IList<string>> queries = new List<IList<string>>();
+        queries.Add(new List<string>() { "a", "c" });
+        queries.Add(new List<string>() { "b", "a" });
+        queries.Add(new List<string>() { "a", "e" });
+        queries.Add(new List<string>() { "a", "a" });
+        queries.Add(new List<string>() { "x", "x" });
+
+        EvaluateDivision eva = new EvaluateDivision();
+        double[] res = eva.CalcEquation(equations, values, queries);
+        double[] ans = new double[] { 6.00000, 0.50000, -1.00000, 1.00000, -1.00000 };
+        bool e = res.Equals(ans);
+        for (int i = 0; i < res.Length; i++)
+        {
+            if (res[i] != ans[i])
+            {
+                Assert.Fail();
+            }
+        }
+        // Assert.AreEqual(res, ans);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
@@ -915,7 +946,7 @@ public class LeetCode150_1
 
             for (int j = 0; j < array1[i].Length; j++)
             {
-            if (!EqualityComparer<T>.Default.Equals(array1[i][j], array2[i][j]))
+                if (!EqualityComparer<T>.Default.Equals(array1[i][j], array2[i][j]))
                 {
                     return false;
                 }
