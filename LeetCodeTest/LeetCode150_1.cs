@@ -878,8 +878,28 @@ public class LeetCode150_1
         Assert.IsTrue(res == 1);
     }
 
+    [TestMethod]
+    public void SurroundedRegionsTest()
+    {
+        char[][] input = {
+                new char[] { 'X','X','X','X'},
+                new char[] { 'X','O','O','X' },
+                new char[] { 'X','X','O','X' },
+                new char[] { 'X','O','X','X' }};
+        SurroundedRegions regions = new SurroundedRegions();
+        regions.Solve(input);
+
+        char[][] anss = {
+                new char[] { 'X','X','X','X'},
+                new char[] { 'X','X','X','X' },
+                new char[] { 'X','X','X','X' },
+                new char[] { 'X','O','X','X' }};
+
+        Assert.IsTrue(AreJaggedArraysEqual(input, anss));
+    }
+
     // Untility for check two int[][] are equal.
-    public static bool AreJaggedArraysEqual(int[][] array1, int[][] array2)
+    public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
         if (array1.Length != array2.Length)
         {
@@ -895,7 +915,7 @@ public class LeetCode150_1
 
             for (int j = 0; j < array1[i].Length; j++)
             {
-                if (array1[i][j] != array2[i][j])
+            if (!EqualityComparer<T>.Default.Equals(array1[i][j], array2[i][j]))
                 {
                     return false;
                 }
@@ -920,4 +940,8 @@ public class LeetCode150_1
 
         return true;
     }
+}
+
+internal class T
+{
 }
