@@ -941,6 +941,32 @@ public class LeetCode150_1
         // Assert.AreEqual(res, ans);
     }
 
+    [TestMethod]
+    public void CourseScheduleIITest()
+    {
+        //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+
+        int numCourses = 2;
+        int[][] prerequisites = { new int[] { 0, 1 } };
+        CourseScheduleII cs = new CourseScheduleII();
+        var res = cs.FindOrder(numCourses, prerequisites);
+        int[] ans1 = { 1, 0 };
+
+        Assert.IsTrue(res.SequenceEqual(ans1));
+    }
+
+    [TestMethod]
+    public void MinimumGeneticMutationTest()
+    {
+        //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+        string startGene = "AACCGGTT"; string endGene = "AAACGGTA";
+        string[] bank = new string[] { "AACCGGTA", "AACCGCTA", "AAACGGTA" };
+        MinimumGeneticMutation sol = new MinimumGeneticMutation();
+        int times = sol.MinMutation(startGene, endGene, bank);
+
+        Assert.IsTrue(times == 2);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
