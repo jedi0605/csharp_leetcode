@@ -956,6 +956,23 @@ public class LeetCode150_1
     }
 
     [TestMethod]
+    public void SnakesAndLaddersTest()
+    {
+        //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
+        int[][] board = new int[][]{
+            new int[]{-1,-1,-1,-1,-1,-1},
+            new int[]{-1,-1,-1,-1,-1,-1},
+            new int []{-1,-1,-1,-1,-1,-1},
+          new int[]   {-1,35,-1,-1,13,-1},
+          new int[]{-1,-1,-1,-1,-1,-1},
+          new int[]{-1,15,-1,-1,-1,-1}
+        };
+        SnakesAndLadders snakes = new SnakesAndLadders();
+
+        Assert.IsTrue(snakes.Steps(board) == 4);
+    }
+
+    [TestMethod]
     public void MinimumGeneticMutationTest()
     {
         //= [["a","b"],["b","c"]], values = [2.0,3.0], queries = [["a","c"],["b","a"],["a","e"],["a","a"],["x","x"]]
@@ -967,6 +984,16 @@ public class LeetCode150_1
         Assert.IsTrue(times == 2);
     }
 
+    [TestMethod]
+    public void WordLadderTest()
+    {
+        string beginWord = "hit";
+        string endWord = "cog";
+        List<string> wordList = new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" };
+
+        WordLadder ladder = new WordLadder();
+        Assert.IsTrue( ladder.LadderLength(beginWord,endWord,wordList)==5);        
+    }
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
