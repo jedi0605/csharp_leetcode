@@ -992,8 +992,23 @@ public class LeetCode150_1
         List<string> wordList = new List<string>() { "hot", "dot", "dog", "lot", "log", "cog" };
 
         WordLadder ladder = new WordLadder();
-        Assert.IsTrue( ladder.LadderLength(beginWord,endWord,wordList)==5);        
+        Assert.IsTrue(ladder.LadderLength(beginWord, endWord, wordList) == 5);
     }
+
+    [TestMethod]
+    public void DesignAddandSearchWordsDataStructureTest()
+    {
+        WordDictionary2 dictionary = new WordDictionary2();
+        dictionary.AddWord("bad");
+        dictionary.AddWord("dad");
+        dictionary.AddWord("mad");
+        Assert.IsFalse(dictionary.Search("pad")); // return False
+        Assert.IsTrue(dictionary.Search("bad")); // return True
+        Assert.IsTrue(dictionary.Search(".ad")); // return True
+        Assert.IsTrue(dictionary.Search("b..")); // return True
+
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
