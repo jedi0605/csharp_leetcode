@@ -1009,6 +1009,46 @@ public class LeetCode150_1
 
     }
 
+    [TestMethod]
+    public void WordSearchTest()
+    {
+        string word = "ABCCED";
+        char[][] board = new char[][] { new char[] { 'A', 'B', 'C', 'E' }, new char[] { 'S', 'F', 'C', 'S' }, new char[] { 'A', 'D', 'E', 'E' } };
+        WordSearch2 solution = new WordSearch2();
+
+        Assert.IsTrue(solution.Exist(board, word));
+    }
+
+    [TestMethod]
+    public void WordSearchIITest()
+    {
+        string[] words = new string[] { "oath", "pea", "eat", "rain" };
+        char[][] board = new char[][] { new char[] { 'o','a','a','n' },
+                                         new char[] { 'e','t','a','e' },
+                                         new char[] { 'i','h','k','r'} ,
+                                         new char[] { 'i','f','l','v'} };
+        WordSearchII solution = new WordSearchII();
+        var res = solution.FindWords(board, words);
+    }
+
+    [TestMethod]
+    public void WordSearchII2Test()
+    {
+        string[] words = new string[] { "aaa" };
+        char[][] board = new char[][] { new char[] { 'a', 'a' } };
+        WordSearchII solution = new WordSearchII();
+        var res = solution.FindWords(board, words);
+    }
+
+    [TestMethod]
+    public void LongestCommonSubsequenceTest()
+    {
+        LongestCommonSubsequence longest = new LongestCommonSubsequence();
+        string text1 = "abcde";
+        string text2 = "ace";
+        Assert.IsTrue(longest.Longest(text1, text2) == 3);
+    }
+
     // Untility for check two int[][] are equal.
     public static bool AreJaggedArraysEqual<T>(T[][] array1, T[][] array2)
     {
